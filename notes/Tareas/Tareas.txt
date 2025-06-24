@@ -1,0 +1,38 @@
+TAREAS:
+.
+- comportamiento del viento con partículas y cálculo vectorial.
+- dibujar sistema de cambio del viento por ciclos, pintar porvenir y linea carga.
+- dibujar los datos de recursos obtenidos, modelo de información.
+- dibujar y limitar juego segun reloj de la partida.
+- dibujar estado del juego, métricas de cada grupo.
+- dibujar los botones contextuales y dejarlos listos para implementación.
+- dibujar aletas en los bordes de la pantalla, función para usarla luego.
+- poder mover la cámara con WASD o mouse, hacer zoom.
+- hacer un menú principal sencillo, por ahora solo con 3 botones de play.
+- crear mundo aleatorio, biomas y mares con recursos, algoritmo exparcimiento.
+- paracaidista: asciende, vuela, desciende, seguí viento y paracaídas.
+- bomba: asciende, vuela y deja caer bombas que llegan a tierra.
+- explosión: animación con daño de área.
+- nuclear: similar a bomba pero en otro objeto para evitar antibombas.
+- acomodar todos los objetos de edificios para poder dibujarlos, dañarlos y animarlos.
+- extractor: produce recursos según bioma y extractores cerca.
+- velero: se mueve por el agua según viento.
+- soldado: permanece en pie, muere si vida 0 o se ahoga si en agua.
+- daño entre soldados, veleros, fuertes.
+- antena: asociar dron de vuelo libre.
+- sombras bajo todos los objetos.
+- niebla de guerra, shader de iluminación de suelo circular.
+- condición de construcción según cantidad de soldados juntos.
+- edificio: crear población hasta límite, según bioma.
+- respawn de paracaidistas y bombas.
+- antena: onda expansiva que elimina bombas, implosión.
+- otros grupos enemigos, manejo inteligente dopado y aleatorio.
+- condición de victoria y pantalla final, ganó o perdió.
+- efectos de sonido a todo.
+- música de fondo para menú y juego.
+.
+HECHO:
+.
+- alistar todos los sprites y objetos necesarios.
+- poner el delta de tiempo global y ajustar el tamaño de la ventana.
+.

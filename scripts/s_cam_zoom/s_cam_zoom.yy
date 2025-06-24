@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_cam_zoom",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_cam_zoom",
+  "parent":{
+    "name":"Generales",
+    "path":"folders/Scripts/Generales.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

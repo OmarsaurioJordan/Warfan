@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_new_biomas",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_new_biomas",
+  "parent":{
+    "name":"Generales",
+    "path":"folders/Scripts/Generales.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
