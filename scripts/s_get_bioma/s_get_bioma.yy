@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_get_bioma",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_get_bioma",
+  "parent":{
+    "name":"Creacion",
+    "path":"folders/Scripts/Creacion.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

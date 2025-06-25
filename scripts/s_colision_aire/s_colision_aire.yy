@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_colision_aire",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_colision_aire",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"s_new_biomas",
   "parent":{
-    "name":"Generales",
-    "path":"folders/Scripts/Generales.yy",
+    "name":"Creacion",
+    "path":"folders/Scripts/Creacion.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

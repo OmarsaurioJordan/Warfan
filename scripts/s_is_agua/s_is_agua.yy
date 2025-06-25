@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_is_agua",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_is_agua",
+  "parent":{
+    "name":"Creacion",
+    "path":"folders/Scripts/Creacion.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

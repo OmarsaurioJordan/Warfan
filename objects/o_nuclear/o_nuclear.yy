@@ -31,6 +31,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":null,
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"d_base3",
+    "path":"sprites/d_base3/d_base3.yy",
+  },
   "visible":true,
 }

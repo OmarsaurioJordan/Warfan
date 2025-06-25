@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_colision_suelo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_colision_suelo",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

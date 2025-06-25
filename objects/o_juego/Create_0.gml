@@ -1,13 +1,29 @@
+// estructura de datos para el viento
+reloj_viento = m_viento_reloj_max;
+for (var i = 0; i < m_viento_historial; i++) {
+	histo_viento_ang[i] = irandom(35) * 10;
+	histo_viento_vel[i] = irandom(3);
+}
+
 // particulas de viento cantidad fija
-repeat m_vientos {
+repeat m_viento_particulas {
 	instance_create_depth(
-		random(g_width * g_wbaldoza),
-		random(g_height * g_hbaldoza),
+		random(g_width),
+		random(g_height),
 		0, o_viento);
 }
 
 // crear un mundo aleatorio
 biomas = s_new_biomas();
+tierras = 0;
+for (var w = 0; w < g_width_c; w++) {
+	for (var h = 0; h < g_height_c; h++) {
+		if ds_grid_get(biomas, w, h) != m_bio_agua {
+			tierras++;
+		}
+	}
+}
+s_new_recursos();
 
 // Quitar crear cosas para test
 instance_create_depth(300, 300, -300, o_fuerte);

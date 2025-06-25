@@ -1,6 +1,4 @@
-function s_cam_move(argument0) {
-	
-	// s_cam_move(key_mouse);
+function s_cam_move(key_mouse) {
 	// key_mouse usualmente es mb_right
 
 	with o_control {
@@ -12,11 +10,11 @@ function s_cam_move(argument0) {
 		        yview + cam_data[5] - mouse_y);
 	        s_cam_limit();
 	    }
-	    if mouse_check_button_pressed(argument0) {
+	    if mouse_check_button_pressed(key_mouse) {
 	        cam_data[4] = mouse_x;
 	        cam_data[5] = mouse_y;
 	    }
-	    else if mouse_check_button_released(argument0) {
+	    else if mouse_check_button_released(key_mouse) {
 	        cam_data[4] = 0;
 	        cam_data[5] = 0;
 	    }

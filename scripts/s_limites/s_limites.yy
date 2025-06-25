@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_limites",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_limites",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_radio_mi_bioma",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_radio_mi_bioma",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
