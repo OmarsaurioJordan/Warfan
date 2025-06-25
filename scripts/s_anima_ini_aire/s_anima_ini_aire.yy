@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_anima_ini_aire",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_anima_ini_aire",
+  "parent":{
+    "name":"Generales",
+    "path":"folders/Scripts/Generales.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

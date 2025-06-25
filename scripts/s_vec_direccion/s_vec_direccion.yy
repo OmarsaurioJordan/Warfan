@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_vec_direccion",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_vec_direccion",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -8,8 +8,8 @@ g_viento_y = 0;
 g_viento_vel = 0; // velocidad viento interpolada
 g_width_c = 64; // talla del mundo cotada en zonas
 g_height_c = 48;
-g_width = m_wcelda * g_width_c; // talla general del mundo
-g_height = m_hcelda * g_height_c;
+g_width = room_width; // talla general del mundo, recalculada en o_juego
+g_height = room_height;
 // para dibujar en diferentes colores
 g_color[m_gru_azul] = make_color_rgb(124, 107, 219);
 g_color[m_gru_rojo] = make_color_rgb(219, 78, 58);

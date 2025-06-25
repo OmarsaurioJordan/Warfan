@@ -12,8 +12,8 @@ if reloj_anima <= 0 {
 
 // movimiento con viento
 if !s_colision_agua(id, 0.2) {
-	x += g_viento_x * 0.5 * dlt;
-	y += g_viento_y * 0.5 * dlt;
+	x += g_viento_x * m_vel_velero * dlt;
+	y += g_viento_y * m_vel_velero * dlt;
 }
 s_limites(id);
 if s_radio_mi_bioma(x, y, 28, true) {

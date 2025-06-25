@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_vec_distancia",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_vec_distancia",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

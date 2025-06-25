@@ -1,5 +1,6 @@
 // animacion
-reloj_anima -= dlt;
+s_anima_aire(id);
+reloj_anima -= dlts;
 if reloj_anima <= 0 {
 	reloj_anima += random_range(0.1, 0.15);
 	reloj_paso++;
@@ -18,13 +19,13 @@ if random(1) < 0.2 {
 		var dd, aux;
 		for (var i = 0; i < ceil(tot / 2); i++) {
 			aux = ds_list_find_value(lis, i);
-			dd = point_direction(aux.x, aux.y, x, y);
+			dd = s_vec_direccion(aux.x, aux.y, x, y);
 			x += lengthdir_x(vv * 1.5, dd);
 			y += lengthdir_y(vv * 1.5, dd);
 		}
 		for (var i = ceil(tot / 2); i < tot; i++) {
 			aux = ds_list_find_value(lis, i);
-			dd = point_direction(aux.x, aux.y, x, y);
+			dd = s_vec_direccion(aux.x, aux.y, x, y);
 			x += lengthdir_x(vv * 0.5, dd);
 			y += lengthdir_y(vv * 0.5, dd);
 		}
@@ -37,7 +38,7 @@ if random(1) < 0.2 {
 }
 // moverse con el viento
 if !s_colision_aire(id, 0.2) {
-	x += g_viento_x * 0.75 * dlt;
-	y += g_viento_y * 0.75 * dlt;
+	x += g_viento_x * m_vel_dron * dlt;
+	y += g_viento_y * m_vel_dron * dlt;
 }
 s_limites(id);

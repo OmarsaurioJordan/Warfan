@@ -34,7 +34,31 @@ with o_viento {
 	s_limites(id);
 }
 
+// cada tanto tratar de limpiar quemonazos acumulados
+if random(1) < 0.005 {
+	var lx, ly;
+	var ok = false;
+	for (var i = 0; i < ds_list_size(lis_quemones_x); i++) {
+		lx = ds_list_find_value(lis_quemones_x, i);
+		ly = ds_list_find_value(lis_quemones_y, i);
+		for (var k = ds_list_size(lis_quemones_x) - 1; k > i; k--) {
+			if point_distance(lx, ly,
+					ds_list_find_value(lis_quemones_x, k),
+					ds_list_find_value(lis_quemones_y, k)) < 32 {
+				ds_list_delete(lis_quemones_x, k);
+				ds_list_delete(lis_quemones_y, k);
+				ok = true;
+			}
+		}
+		if ok {
+			break;
+		}
+	}
+}
+
 // Quitar trampas
-if mouse_check_button_pressed(mb_middle) {
-	instance_create_depth(mouse_x, mouse_y, -mouse_y, o_paracaidas);
+if mouse_check_button_pressed(mb_left) {
+	instance_create_depth(mouse_x, mouse_y, -mouse_y, 
+		o_bombardero);
+		//choose(o_dron, o_paracaidas, o_bombardero, o_nuclear));
 }
