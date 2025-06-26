@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_set_dron",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_set_dron",
+  "parent":{
+    "name":"Ingame",
+    "path":"folders/Scripts/Ingame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

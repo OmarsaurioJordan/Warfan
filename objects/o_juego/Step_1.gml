@@ -31,7 +31,23 @@ with o_viento {
 	}
 	x += (g_viento_x + desf_x) * dlts;
 	y += (g_viento_y + desf_y) * dlts;
-	s_limites(id);
+	if x < 0 {
+		x += g_width;
+		altura = 32 + random(m_altu_vuelo);
+	}
+	else if x > g_width {
+		x -= g_width;
+		altura = 32 + random(m_altu_vuelo);
+	}
+	if y < 0 {
+		y += g_height;
+		altura = 32 + random(m_altu_vuelo);
+	}
+	else if y > g_height {
+		y -= g_height;
+		altura = 32 + random(m_altu_vuelo);
+	}
+	depth = -y;
 }
 
 // cada tanto tratar de limpiar quemonazos acumulados
@@ -100,11 +116,81 @@ if reloj_porcentajes <= 0 {
 	}
 }
 
-// Quitar trampas
+// comandos con mouse clic
 if mouse_check_button_pressed(mb_left) {
-	instance_create_depth(mouse_x, mouse_y, -mouse_y, 
-		choose(o_dron, o_paracaidas, o_bombardero));
+	switch mouse_foco {
+		
+		case m_foc_edi_foco:
+			g_seleccion = g_edifi_foco;
+			break;
+		
+		case m_foc_antena:
+			s_set_construir(o_antena);
+			break;
+		case m_foc_cuartel:
+			s_set_construir(o_cuartel);
+			break;
+		case m_foc_edificio:
+			s_set_construir(o_edificio);
+			break;
+		case m_foc_fabrica:
+			s_set_construir(o_fabrica);
+			break;
+		case m_foc_fuerte:
+			s_set_construir(o_fuerte);
+			break;
+		case m_foc_torre:
+			s_set_construir(o_torre);
+			break;
+		case m_foc_silo_nuclear:
+			s_set_construir(o_silo_nuclear);
+			break;
+		
+		case m_foc_velero:
+			s_new_velero(g_seleccion);
+			break;
+		
+		case m_foc_antibombas:
+			
+			break;
+		
+		case m_foc_paracaidas1:
+		case m_foc_paracaidas2:
+		case m_foc_paracaidas3:
+			s_new_paracaidas(g_seleccion, mouse_foco);
+			break;
+		
+		case m_foc_bomb_normal:
+		case m_foc_bomb_dispersion:
+		case m_foc_bomb_linea:
+			s_new_bombardero(g_seleccion, mouse_foco);
+			break;
+		
+		case m_foc_bomb_nuclear:
+			s_new_nuclear(g_seleccion);
+			break;
+		
+		case m_foc_dron:
+			s_set_dron(g_seleccion);
+			break;
+		
+		case m_foc_mejora:
+			s_set_mejora(g_seleccion);
+			break;
+		
+		default:
+			g_seleccion = noone;
+			break;
+	}
 }
+
+// liberar mouse
+if keyboard_check_pressed(vk_space) {
+	construir = noone;
+	g_seleccion = noone;
+}
+
+// Quitar trampas
 if mouse_check_button_pressed(mb_middle) {
-	instance_create_depth(mouse_x, mouse_y, -mouse_y, o_velero);
+	instance_create_depth(mouse_x, mouse_y, -mouse_y, o_paracaidas);
 }

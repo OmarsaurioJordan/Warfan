@@ -19,5 +19,6 @@ reloj_produccion -= dlt;
 if reloj_produccion <= 0 {
 	reloj_produccion += m_reloj_produccion + random(0.2);
 	var lvl = lerp(0.3, 0.9, nivel / 2) * 0.5;
-	o_juego.recurso[grupo, m_rec_gente] += ext_gente * lvl;
+	o_juego.recurso[grupo, m_rec_gente] = min(9999,
+		o_juego.recurso[grupo, m_rec_gente] + ext_gente * lvl);
 }

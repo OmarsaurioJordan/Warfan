@@ -9,8 +9,10 @@ if helice_ang > 360 {
 reloj_produccion -= dlt;
 if reloj_produccion <= 0 {
 	reloj_produccion += m_reloj_produccion + random(0.2);
-	o_juego.recurso[grupo, m_rec_mineral] +=
-		ext_mineral * 0.1 * vv;
-	o_juego.recurso[grupo, m_rec_madera] +=
-		ext_madera * 0.1 * vv;
+	o_juego.recurso[grupo, m_rec_mineral] = min(9999,
+		o_juego.recurso[grupo, m_rec_mineral] +
+		ext_mineral * 0.1 * vv);
+	o_juego.recurso[grupo, m_rec_madera] = min(9999,
+		o_juego.recurso[grupo, m_rec_madera] +
+		ext_madera * 0.1 * vv);
 }

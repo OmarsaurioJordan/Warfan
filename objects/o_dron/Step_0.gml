@@ -11,21 +11,23 @@ if reloj_anima <= 0 {
 
 // alejarse de otros drones
 if random(1) < 0.2 {
-	var lis = ds_list_create();
-	if collision_circle_list(x, y, m_vision_dron,
-			o_dron, true, true, lis, true) != 0 {
-		var tot = ds_list_size(lis);
+	var lis = ds_priority_create();
+	if s_meet_circle_list(x, y, m_vision_dron,
+			o_dron, id, lis) != 0 {
+		var tot = ds_priority_size(lis);
 		var vv = 200 * dlt / tot;
 		var dd, aux;
 		for (var i = 0; i < ceil(tot / 2); i++) {
-			aux = ds_list_find_value(lis, i);
-			dd = s_vec_direccion(aux.x, aux.y, x, y);
+			aux = ds_priority_find_min(lis);
+			dd = ds_priority_find_priority(lis, aux);
+			ds_priority_delete_min(lis);
 			x += lengthdir_x(vv * 1.5, dd);
 			y += lengthdir_y(vv * 1.5, dd);
 		}
 		for (var i = ceil(tot / 2); i < tot; i++) {
-			aux = ds_list_find_value(lis, i);
-			dd = s_vec_direccion(aux.x, aux.y, x, y);
+			aux = ds_priority_find_min(lis);
+			dd = ds_priority_find_priority(lis, aux);
+			ds_priority_delete_min(lis);
 			x += lengthdir_x(vv * 0.5, dd);
 			y += lengthdir_y(vv * 0.5, dd);
 		}
@@ -34,7 +36,7 @@ if random(1) < 0.2 {
 		x += lengthdir_x(vv, dd);
 		y += lengthdir_y(vv, dd);
 	}
-	ds_list_destroy(lis);
+	ds_priority_destroy(lis);
 }
 // moverse con el viento
 if !s_colision_aire(id, 0.2) {

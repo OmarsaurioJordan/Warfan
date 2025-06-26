@@ -9,7 +9,10 @@
     "name":"Abstractos",
     "path":"folders/Objetos/Abstractos.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"o_grupo",
+    "path":"objects/o_grupo/o_grupo.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

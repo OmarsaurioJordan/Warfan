@@ -1,3 +1,6 @@
+if g_edifi_foco == id or g_seleccion == id {
+	draw_sprite(d_edificios_foco, 4, x, y);
+}
 draw_sprite(d_edificios, 13, x, y);
 draw_sprite_ext(d_edificios_color, 13, x, y,
 	1, 1, 0, g_color[grupo], 1);

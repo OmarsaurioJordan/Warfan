@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_get_xy_wrap",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_get_xy_wrap",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

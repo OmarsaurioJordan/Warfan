@@ -1,6 +1,6 @@
 s_invisi_recursos();
 grupo = m_gru_azul;
-nivel = choose(0, 1, 2);
+nivel = 0;
 reloj_produccion = 0;
 for (var i = 0; i < 3; i++) {
 	anima_up[i] = choose(true, false);
@@ -9,8 +9,8 @@ for (var i = 0; i < 3; i++) {
 
 // verificar biomas para respawn poblacion
 ext_gente = 0;
-var xx = clamp(floor(x / m_wcelda), 0, g_width_c - 1);
-var yy = clamp(floor(y / m_hcelda), 0, g_height_c - 1);
+var xx = s_get_xy_wrap(x, true);
+var yy = s_get_xy_wrap(y, false);
 var veci = s_mat_vecinos(xx, yy, true);
 var aux;
 for (var v = 0; v < 9; v++) {

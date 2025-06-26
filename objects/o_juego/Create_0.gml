@@ -1,6 +1,34 @@
 // talla general del mundo, por si cambia width_c
 g_width = m_wcelda * g_width_c;
 g_height = m_hcelda * g_height_c;
+instance_create_depth(0, 0, 0, o_mouse);
+
+// para acciones de seleccion y menu contextual
+// g_edifi_foco, edificacion sombreada por mouse
+// g_seleccion, que edificio ha seleccionado
+mouse_foco = m_foc_nada; // que boton sombrea el mouse
+construir = noone; // objeto que se desea crear
+constru_foc = m_foc_nada; // de que foco viene el construir
+
+// costos de todas las cosas
+costo[m_foc_antena] = 0;
+costo[m_foc_cuartel] = 0;
+costo[m_foc_torre] = 0;
+costo[m_foc_fabrica] = 0;
+costo[m_foc_fuerte] = 0;
+costo[m_foc_silo_nuclear] = 0;
+costo[m_foc_edificio] = 0;
+costo[m_foc_paracaidas1] = 0;
+costo[m_foc_paracaidas2] = costo[m_foc_paracaidas1];
+costo[m_foc_paracaidas3] = costo[m_foc_paracaidas1];
+costo[m_foc_bomb_normal] = 0;
+costo[m_foc_bomb_dispersion] = 0;
+costo[m_foc_bomb_linea] = 0;
+costo[m_foc_bomb_nuclear] = 0;
+costo[m_foc_velero] = 0;
+costo[m_foc_mejora] = 0;
+costo[m_foc_dron] = 0;
+costo[m_foc_antibombas] = 0;
 
 // estructura de datos para el viento
 reloj_viento = m_viento_reloj_max;
@@ -11,7 +39,7 @@ for (var i = 0; i < m_viento_historial; i++) {
 
 // particulas de viento cantidad fija
 var dens = m_viento_particulas / (64 * 48);
-repeat round(dens * (g_width_c * g_height_c)) {
+repeat round(dens * (g_width_c * g_height_c) * o_control.mas_vientos) {
 	instance_create_depth(
 		random(g_width),
 		random(g_height),

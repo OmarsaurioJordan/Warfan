@@ -28,6 +28,7 @@
 #macro m_vel_paracaidas_min 0.3
 #macro m_vel_paracaidas_max 0.9
 #macro m_reloj_produccion 2
+#macro m_radio_velero 28
 
 // otras cosas, decorados
 #macro m_paso_fin_explosion 120
@@ -62,3 +63,23 @@
 #macro m_rec_vivo 6
 #macro m_rec_porcent 7
 #macro m_rec_tot 8
+#macro m_foc_nada -1
+#macro m_foc_silo_nuclear 0
+#macro m_foc_antena 1
+#macro m_foc_fuerte 2
+#macro m_foc_fabrica 3
+#macro m_foc_edificio 4
+#macro m_foc_torre 5
+#macro m_foc_cuartel 6
+#macro m_foc_edi_foco 7
+#macro m_foc_bomb_normal 8
+#macro m_foc_bomb_dispersion 9
+#macro m_foc_bomb_linea 10
+#macro m_foc_bomb_nuclear 11
+#macro m_foc_paracaidas1 12
+#macro m_foc_paracaidas2 13
+#macro m_foc_paracaidas3 14
+#macro m_foc_velero 15
+#macro m_foc_mejora 16
+#macro m_foc_dron 17
+#macro m_foc_antibombas 18

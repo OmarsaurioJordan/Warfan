@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_set_construir",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_set_construir",
+  "parent":{
+    "name":"Generales",
+    "path":"folders/Scripts/Generales.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

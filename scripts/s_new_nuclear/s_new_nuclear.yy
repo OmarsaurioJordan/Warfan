@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_new_nuclear",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_new_nuclear",
+  "parent":{
+    "name":"Ingame",
+    "path":"folders/Scripts/Ingame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

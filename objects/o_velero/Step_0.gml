@@ -16,7 +16,7 @@ if !s_colision_agua(id, 0.2) {
 	y += g_viento_y * m_vel_velero * dlt;
 }
 s_limites(id);
-if s_radio_mi_bioma(x, y, 28, true) {
+if s_radio_mi_bioma(x, y, m_radio_velero, true) {
 	mi_agua_x = x;
 	mi_agua_y = y;
 }
@@ -24,7 +24,7 @@ else {
 	x = mi_agua_x + random_range(-3, 3);
 	y = mi_agua_y + random_range(-3, 3);
 	s_limites(id);
-	if s_radio_mi_bioma(x, y, 28, true) {
+	if s_radio_mi_bioma(x, y, m_radio_velero, true) {
 		mi_agua_x = x;
 		mi_agua_y = y;
 	}

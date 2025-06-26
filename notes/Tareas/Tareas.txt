@@ -2,15 +2,13 @@ TAREAS:
 .
 - hacer un menú principal sencillo, por ahora solo con 3 botones de play.
 - dibujar y limitar juego segun reloj de la partida.
-- dibujar los botones contextuales y dejarlos listos para implementación.
-- dibujar aletas en los bordes de la pantalla, función para usarla luego.
-- acomodar todos los objetos de edificios para poder dibujarlos, dañarlos y animarlos.
+- dibujar alertas en los bordes de la pantalla, función para usarla luego.
+- dibujar minimapa estratégico.
 - daño entre soldados, veleros, fuertes.
 - daño causado por explosiónes.
 - niebla de guerra, shader de iluminación de suelo circular.
-- condición de construcción según cantidad de soldados juntos.
-- respawn de paracaidistas y bombas.
 - antena: onda expansiva que elimina bombas, implosión.
+- posicionar grupos y camara al iniciar la partida.
 - otros grupos enemigos, manejo inteligente dopado y aleatorio.
 - condición de victoria y pantalla final, ganó o perdió.
 - efectos de sonido a todo.
@@ -37,10 +35,21 @@ HECHO:
 - dibujar estado del juego, métricas de cada grupo.
 - extractor: produce recursos según bioma y extractores cerca.
 - edificio: crear población hasta límite, según bioma.
+- condición de construcción según cantidad de soldados juntos.
+- dibujar los botones contextuales y seleccion de modo construcción.
+- dibujar los botones contextuales de edificaciónes y dejarlos listos para implementación.
+- acomodar todos los objetos de edificios para poder dibujarlos, dañarlos y animarlos.
+- respawn de paracaidistas y bombas.
 .
 ETC:
 .
 - paracaídas, globo y aletas se hacen transparentes al desaparecer.
 - limites de zoom en funcion de talla del mapa.
 - evitar stops del viento muy consecutivos.
+- monigotes de fuerte se mueven y los parados también.
+- resaltado blanco a aspas molino fabrica.
+- shortcuts de teclado.
+- los veleros se repelen igual que los drones.
+- contador porcentaje silo_nuclear para poder lanzar.
+- seleccionar tamaño interfaz GUI.
 .

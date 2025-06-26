@@ -23,8 +23,8 @@ function s_new_biomas() {
 		}
 		// convertir o_temp_pico a dominio discreto del grid
 		with o_temp_pico {
-			x = clamp(floor(x / m_wcelda), 0, g_width_c - 1);
-			y = clamp(floor(y / m_hcelda), 0, g_height_c - 1);
+			x = s_get_xy_wrap(x, true);
+			y = s_get_xy_wrap(y, false);
 		}
 		// crear rejilla de temperatura
 		var temp = ds_grid_create(g_width_c, g_height_c);
