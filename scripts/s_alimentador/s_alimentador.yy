@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_alimentador",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_alimentador",
+  "parent":{
+    "name":"Ingame",
+    "path":"folders/Scripts/Ingame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

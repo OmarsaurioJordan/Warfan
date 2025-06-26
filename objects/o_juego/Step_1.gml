@@ -56,9 +56,55 @@ if random(1) < 0.005 {
 	}
 }
 
+// cada tanto calcular porcentajes
+reloj_porcentajes -= dlts;
+if reloj_porcentajes <= 0 {
+	reloj_porcentajes = m_reloj_porcentajes;
+	ver_porcentajes = !ver_porcentajes;
+	if ver_porcentajes {
+		var tot = 0;
+		for (var i = 0; i < 4; i++) {
+			tot += recurso[i, m_rec_explosiones];
+		}
+		for (var i = 0; i < 4; i++) {
+			recurso[i, m_rec_porcent] = round(
+				(recurso[i, m_rec_explosiones] /
+				max(1, tot)) * 100);
+		}
+	}
+	else {
+		for (var i = 0; i < 4; i++) {
+			recurso[i, m_rec_edificios] = 0;
+			recurso[i, m_rec_poblacion] = 0;
+			with o_bloque {
+				if grupo == i {
+					o_juego.recurso[i, m_rec_edificios]++;
+				}
+			}
+			with o_soldado {
+				if grupo == i {
+					o_juego.recurso[i, m_rec_poblacion]++;
+				}
+			}
+			with o_paracaidas {
+				if grupo == i {
+					o_juego.recurso[i, m_rec_poblacion]++;
+				}
+			}
+			with o_velero {
+				if grupo == i {
+					o_juego.recurso[i, m_rec_poblacion]++;
+				}
+			}
+		}
+	}
+}
+
 // Quitar trampas
 if mouse_check_button_pressed(mb_left) {
 	instance_create_depth(mouse_x, mouse_y, -mouse_y, 
-		o_bombardero);
-		//choose(o_dron, o_paracaidas, o_bombardero, o_nuclear));
+		choose(o_dron, o_paracaidas, o_bombardero));
+}
+if mouse_check_button_pressed(mb_middle) {
+	instance_create_depth(mouse_x, mouse_y, -mouse_y, o_velero);
 }

@@ -6,3 +6,5 @@ reloj_anima = 0;
 reloj_paso = 0;
 // para comenzar a lanzar en linea
 reloj_linea = reloj_vuelo * (1 - m_bomba_linea_por_ini);
+linea_x = -1000; // posicion ultima bomba lanzada
+linea_y = 0;

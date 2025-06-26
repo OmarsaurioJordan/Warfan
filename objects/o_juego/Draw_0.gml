@@ -8,6 +8,9 @@ for (var w = 0; w < g_width_c; w++) {
 
 // quemaduras en el suelo
 with o_explosion {
+	if reloj_paso == -1 {
+		continue;
+	}
 	if is_agua {
 		var a = min(0.9, lerp(2, 0, reloj_paso / (m_paso_fin_explosion * 2)));
 		draw_sprite_ext(d_quemonazo, 1, x, y, 1, 1, 0, c_white, a);

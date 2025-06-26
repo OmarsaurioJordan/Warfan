@@ -1,6 +1,9 @@
 randomize();
+draw_set_font(d_letras);
+
 globalvar dlt, dlts, g_viento_x, g_viento_y, g_color,
-	g_width_c, g_height_c, g_width, g_height, g_viento_vel;
+	g_width_c, g_height_c, g_width, g_height, g_viento_vel,
+	g_migrupo;
 dlt = 0; // delta de tiempo pausable
 dlts = 0; // delta de tiempo no pausable
 g_viento_x = 0; // direccion y fuerza del viento
@@ -10,6 +13,7 @@ g_width_c = 64; // talla del mundo cotada en zonas
 g_height_c = 48;
 g_width = room_width; // talla general del mundo, recalculada en o_juego
 g_height = room_height;
+g_migrupo = m_gru_azul; // con que grupo juego
 // para dibujar en diferentes colores
 g_color[m_gru_azul] = make_color_rgb(124, 107, 219);
 g_color[m_gru_rojo] = make_color_rgb(219, 78, 58);

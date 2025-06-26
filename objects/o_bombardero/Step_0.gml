@@ -22,15 +22,18 @@ if reloj_vuelo <= 0 {
 	var aux;
 	if bomba == m_bomb_dispersion {
 		var desf = random(360);
-		for (var i = 0; i < 360; i += 30) {
+		var paso = 360 / m_bomba_dispersion_total;
+		for (var i = 0; i < m_bomba_dispersion_total; i++) {
 			aux = instance_create_depth(x, y, -y, o_bomba);
 			aux.grupo = grupo;
 			aux.altura = altura;
 			aux.bomba = bomba;
-			aux.dir_impulso = i + desf + random_range(-10, 10);
+			aux.dir_impulso = i * paso +
+				desf + random_range(-paso / 3, paso / 3);
 		}
 	}
-	else {
+	else if bomba != m_bomb_linea or
+			point_distance(x, y, linea_x, linea_y) > 24 {
 		aux = instance_create_depth(x, y, -y, o_bomba);
 		aux.grupo = grupo;
 		aux.altura = altura;
@@ -39,14 +42,19 @@ if reloj_vuelo <= 0 {
 	instance_destroy();
 }
 else if bomba == m_bomb_linea and reloj_vuelo < reloj_linea {
-	var aux = instance_create_depth(x, y, -y, o_bomba);
-	aux.grupo = grupo;
-	aux.altura = altura;
-	aux.bomba = bomba;
+	// lanzar bomba
+	if point_distance(x, y, linea_x, linea_y) > 24 {
+		var aux = instance_create_depth(x, y, -y, o_bomba);
+		aux.grupo = grupo;
+		aux.altura = altura;
+		aux.bomba = bomba;
+		linea_x = x;
+		linea_y = y;
+	}
 	// ubicar cuando caera la proxima
 	var paso = m_bombardero_reloj_vuelo *
-		(1 - m_bomba_linea_por_ini) / 11;
-	for (var i = 0; i <= paso * 11; i += paso) {
+		(1 - m_bomba_linea_por_ini) / (m_bomba_linea_total - 1);
+	for (var i = 0; i <= paso * (m_bomba_linea_total - 1); i += paso) {
 		if reloj_vuelo < i {
 			reloj_linea = i - paso;
 			break;

@@ -11,5 +11,9 @@ s_limites(id);
 // destruirse automaticamente
 reloj_vuelo -= dlt;
 if reloj_vuelo <= 0 {
+	var aux = instance_create_depth(x, y, -y, o_bomba);
+	aux.grupo = grupo;
+	aux.altura = altura;
+	aux.bomba = m_bomb_nuclear;
 	instance_destroy();
 }

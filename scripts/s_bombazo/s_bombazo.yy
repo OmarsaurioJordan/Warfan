@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_bombazo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_bombazo",
+  "parent":{
+    "name":"Ingame",
+    "path":"folders/Scripts/Ingame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

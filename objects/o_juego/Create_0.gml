@@ -28,6 +28,15 @@ s_new_recursos();
 lis_quemones_x = ds_list_create();
 lis_quemones_y = ds_list_create();
 
+// recursos por grupo
+reloj_porcentajes = 0;
+ver_porcentajes = true;
+for (var i = 0; i < 4; i++) {
+	for (var k = 0; k < m_rec_tot; k++) {
+		recurso[i, k] = 0;
+	}
+}
+
 // Quitar crear cosas para test
 instance_create_depth(300, 300, -300, o_fuerte);
 instance_create_depth(400, 300, -300, o_torre);
