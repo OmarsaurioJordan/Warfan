@@ -151,7 +151,7 @@ if mouse_check_button_pressed(mb_left) {
 			break;
 		
 		case m_foc_antibombas:
-			
+			s_new_onda(g_seleccion);
 			break;
 		
 		case m_foc_paracaidas1:

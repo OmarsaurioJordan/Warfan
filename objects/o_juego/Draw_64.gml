@@ -163,7 +163,19 @@ else {
 				e, e, 0, c_white, 1);
 			break;
 		case o_antena: // dron y antibombas
-			xx = 50 * e;
+			draw_set_halign(fa_right);
+			xx = 40 * e;
+			yy = room_height - 40 * e;
+			draw_sprite_ext(d_gui, 6, xx, yy,
+				e, e, 0, c_white, 0.666);
+			draw_sprite_ext(d_gui, 32, xx, yy,
+				e, e, 0, c_white, 1);
+			draw_text_transformed_color(xx + 85 * e, yy,
+				string(ceil(g_seleccion.reloj_onda)),
+				e, e, 0, c_black, c_black, c_black, c_black, 1);
+			// botones
+			draw_set_halign(fa_center);
+			xx += 150 * e;
 			yy = room_height - 80 * e;
 			s_foc_boton(mou_x, mou_y, xx, yy, e,
 				string(costo[m_foc_dron]),
@@ -180,17 +192,31 @@ else {
 				e, e, 0, c_white, 1);
 			break;
 		case o_silo_nuclear: // nuclear
-			xx = 50 * e;
-			yy = room_height - 80 * e;
-			s_foc_boton(mou_x, mou_y, xx, yy, e,
-				string(costo[m_foc_bomb_nuclear]),
-				m_foc_bomb_nuclear, 0, 24, false, false);
-			xx += 110 * e;
-			yy = room_height - 40 * e;
-			draw_sprite_ext(d_gui, 23, xx, yy,
-				e, e, 0, c_white, 0.666);
-			draw_sprite_ext(d_gui, 9, xx, yy,
-				e, e, 0, c_white, 1);
+			if g_seleccion.reloj_nuclear == 0 {
+				xx = 50 * e;
+				yy = room_height - 80 * e;
+				s_foc_boton(mou_x, mou_y, xx, yy, e,
+					string(costo[m_foc_bomb_nuclear]),
+					m_foc_bomb_nuclear, 0, 24, false, false);
+				xx += 110 * e;
+				yy = room_height - 40 * e;
+				draw_sprite_ext(d_gui, 23, xx, yy,
+					e, e, 0, c_white, 0.666);
+				draw_sprite_ext(d_gui, 9, xx, yy,
+					e, e, 0, c_white, 1);
+			}
+			else {
+				draw_set_halign(fa_right);
+				xx = 40 * e;
+				yy = room_height - 40 * e;
+				draw_sprite_ext(d_gui, 6, xx, yy,
+					e, e, 0, c_white, 0.666);
+				draw_sprite_ext(d_gui, 32, xx, yy,
+					e, e, 0, c_white, 1);
+				draw_text_transformed_color(xx + 85 * e, yy,
+					string(ceil(g_seleccion.reloj_nuclear)),
+					e, e, 0, c_black, c_black, c_black, c_black, 1);
+			}
 			break;
 	}
 }

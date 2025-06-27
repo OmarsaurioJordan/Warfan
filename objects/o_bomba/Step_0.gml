@@ -18,8 +18,9 @@ if altura == 0 {
 			aux.grupo = grupo;
 			break;
 		case m_bomb_nuclear:
-			var tot = power(m_bomba_radio_nuclear, 2) / power(64, 2);
-			s_bombazo(x, y, ceil(tot), m_bomba_radio_nuclear, grupo);
+			var tot = ceil(power(m_bomba_radio_nuclear, 2) /
+				power(m_radio_bombita_nuclear, 2));
+			s_bombazo(x, y, tot, m_bomba_radio_nuclear, grupo);
 			break;
 	}
 	instance_destroy();

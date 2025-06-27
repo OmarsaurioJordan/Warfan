@@ -7,12 +7,9 @@ TAREAS:
 - daño entre soldados, veleros, fuertes.
 - daño causado por explosiónes.
 - niebla de guerra, shader de iluminación de suelo circular.
-- antena: onda expansiva que elimina bombas, implosión.
 - posicionar grupos y camara al iniciar la partida.
-- otros grupos enemigos, manejo inteligente dopado y aleatorio.
-- condición de victoria y pantalla final, ganó o perdió.
-- efectos de sonido a todo.
-- música de fondo para menú y juego.
+- manejo inteligente IA dopado y aleatorio.
+- condición de victoria y pantalla final, puntajes.
 .
 HECHO:
 .
@@ -40,16 +37,20 @@ HECHO:
 - dibujar los botones contextuales de edificaciónes y dejarlos listos para implementación.
 - acomodar todos los objetos de edificios para poder dibujarlos, dañarlos y animarlos.
 - respawn de paracaidistas y bombas.
+- contador porcentaje silo_nuclear para poder lanzar.
+- antena: onda expansiva que elimina bombas, implosión.
 .
 ETC:
 .
 - paracaídas, globo y aletas se hacen transparentes al desaparecer.
-- limites de zoom en funcion de talla del mapa.
+- limites de zoom camara en funcion de talla del mapa.
 - evitar stops del viento muy consecutivos.
 - monigotes de fuerte se mueven y los parados también.
 - resaltado blanco a aspas molino fabrica.
 - shortcuts de teclado.
 - los veleros se repelen igual que los drones.
-- contador porcentaje silo_nuclear para poder lanzar.
 - seleccionar tamaño interfaz GUI.
+- en metricas de unidades y edificios guardar maximos.
+- efectos de sonido a todo.
+- música de fondo para menú y juego.
 .

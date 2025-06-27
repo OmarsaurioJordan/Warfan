@@ -28,6 +28,10 @@ for (var i = 0; i < ds_list_size(lis_quemones_x); i++) {
 }
 
 // sombras de entes
+with o_onda {
+	draw_sprite_ext(d_viento, 1, x, y,
+		esc_onda, esc_onda, 0, c_gray, opac_onda);
+}
 with o_bomba {
 	switch bomba {
 		case m_bomb_normal:

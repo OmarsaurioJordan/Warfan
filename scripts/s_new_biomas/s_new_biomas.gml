@@ -67,16 +67,28 @@ function s_new_biomas() {
 			ds_grid_copy(temp, tmp);
 		}
 		// colocar las temperaturas en biomas
+		var bio;
 		for (var w = 0; w < g_width_c; w++) {
 			for (var h = 0; h < g_height_c; h++) {
-				if ds_grid_get(biomas, w, h) == m_bio_agua or random(1) < 0.05 {
+				bio = ds_grid_get(biomas, w, h);
+				if bio == m_bio_agua or random(1) < 0.05 {
 					continue;
 				}
 				if ds_grid_get(temp, w, h) > random_range(0.05, 0.3) {
-					ds_grid_set(biomas, w, h, m_bio_arena);
+					if bio == m_bio_pasto {
+						ds_grid_set(biomas, w, h, m_bio_arena);
+					}
+					else {
+						ds_grid_set(biomas, w, h, m_bio_rojo);
+					}
 				}
 				else if ds_grid_get(temp, w, h) < -random_range(0.05, 0.3) {
-					ds_grid_set(biomas, w, h, m_bio_nieve);
+					if bio == m_bio_pasto {
+						ds_grid_set(biomas, w, h, m_bio_nieve);
+					}
+					else {
+						ds_grid_set(biomas, w, h, m_bio_hielo);
+					}
 				}
 			}
 		}

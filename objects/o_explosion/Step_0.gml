@@ -21,6 +21,6 @@ if reloj_fin <= 0 {
 	else if reloj_paso == 3 {
 		o_juego.recurso[grupo, m_rec_explosiones]++;
 		// hacer damage a las cosas cercanas
-		
+		// Tarea
 	}
 }

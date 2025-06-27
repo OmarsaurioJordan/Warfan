@@ -21,7 +21,9 @@
 #macro m_bomba_linea_total 10
 #macro m_bomba_normal_total 6
 #macro m_bomba_radio_normal 200
-#macro m_bomba_radio_nuclear 600
+#macro m_bomba_radio_nuclear 666
+#macro m_reloj_nuclear 180
+#macro m_radio_bombita_nuclear 55
 #macro m_vel_dron 0.75
 #macro m_vel_velero 0.5
 #macro m_vel_bombardero 0.8
@@ -29,6 +31,10 @@
 #macro m_vel_paracaidas_max 0.9
 #macro m_reloj_produccion 2
 #macro m_radio_velero 28
+#macro m_reloj_onda 4
+#macro m_vel_onda 180
+#macro m_ondas_total 32
+#macro m_cadencia_ondas 30
 
 // otras cosas, decorados
 #macro m_paso_fin_explosion 120
@@ -44,6 +50,8 @@
 #macro m_bio_tierra 2
 #macro m_bio_pasto 3
 #macro m_bio_nieve 4
+#macro m_bio_hielo 5
+#macro m_bio_rojo 6
 
 // estructura del mundo
 #macro m_wcelda 134
