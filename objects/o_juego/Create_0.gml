@@ -9,6 +9,7 @@ instance_create_depth(0, 0, 0, o_mouse);
 mouse_foco = m_foc_nada; // que boton sombrea el mouse
 construir = noone; // objeto que se desea crear
 constru_foc = m_foc_nada; // de que foco viene el construir
+reloj_regenera = 0; // para curar unidades
 
 // costos de todas las cosas
 costo[m_foc_antena] = 0;
@@ -47,10 +48,16 @@ repeat round(dens * (g_width_c * g_height_c) * o_control.mas_vientos) {
 }
 
 // crear un mundo aleatorio
-tierras = 0;
-biomas = s_new_mundo();
-s_new_biomas();
-s_new_recursos();
+tierras = 0; // total de zonas que son terrestres, de g_width_c * g_height_c
+biomas = ds_grid_create(g_width_c, g_height_c); // grid con todos los datos de terrenos
+do {
+	s_new_mundo();
+	s_new_biomas();
+	s_new_recursos();
+}
+until (s_inicializar_grupos(ceil(g_width_c * g_height_c *
+	(100 / 3072) * s_num_players(true)), 10));
+s_crear_demo(300); // Quitar demo
 
 // lista para guardar marcas de quemonazos
 lis_quemones_x = ds_list_create();
@@ -64,12 +71,3 @@ for (var i = 0; i < 4; i++) {
 		recurso[i, k] = 0;
 	}
 }
-
-// Quitar crear cosas para test
-instance_create_depth(300, 300, -300, o_fuerte);
-instance_create_depth(400, 300, -300, o_torre);
-instance_create_depth(500, 300, -300, o_silo_nuclear);
-instance_create_depth(600, 300, -300, o_fabrica);
-instance_create_depth(300, 400, -400, o_edificio);
-instance_create_depth(400, 400, -400, o_cuartel);
-instance_create_depth(500, 400, -400, o_antena);

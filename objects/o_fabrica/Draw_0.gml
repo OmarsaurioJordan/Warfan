@@ -16,3 +16,4 @@ draw_sprite_ext(d_edificios, 10, x, y - 70,
 	1, 1, helice_ang + 240, c_white, 1);
 draw_sprite_ext(d_edificios_color, 10, x, y - 70,
 	1, 1, helice_ang + 240, g_color[grupo], 1);
+s_draw_mifuego(id, 60);

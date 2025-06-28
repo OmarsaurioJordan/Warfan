@@ -4,4 +4,7 @@ helice_ang = random(360);
 ext_mineral = 0;
 ext_madera = 0;
 reloj_produccion = 0;
+vida_max = s_get_vida(object_index);
+vida = vida_max;
+fuego = irandom(m_fuegos_ani - 1);
 s_extractores();

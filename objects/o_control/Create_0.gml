@@ -1,9 +1,10 @@
 randomize();
 draw_set_font(d_letras);
+instance_create_depth(0, 0, 0, o_base);
 
 globalvar dlt, dlts, g_viento_x, g_viento_y, g_color,
 	g_width_c, g_height_c, g_width, g_height, g_viento_vel,
-	g_migrupo, g_edifi_foco, g_seleccion;
+	g_migrupo, g_edifi_foco, g_seleccion, g_paso_fuego;
 dlt = 0; // delta de tiempo pausable
 dlts = 0; // delta de tiempo no pausable
 g_viento_x = 0; // direccion y fuerza del viento
@@ -17,11 +18,13 @@ g_migrupo = m_gru_azul; // con que grupo juego
 g_edifi_foco = noone; // edificacion sombreada por mouse
 g_seleccion = noone; // que edificio ha seleccionado
 mas_vientos = 1; // multiplo para aparecer mas particulas
+
 // para dibujar en diferentes colores
 g_color[m_gru_azul] = make_color_rgb(124, 107, 219);
 g_color[m_gru_rojo] = make_color_rgb(219, 78, 58);
 g_color[m_gru_amarillo] = make_color_rgb(219, 203, 92);
 g_color[m_gru_verde] = make_color_rgb(80, 219, 154);
+
 // cosas de la camara
 view_camera[0] = camera_create_view(0, 0, room_width, room_height);
 cam_data[5] = 0; // para mover la camara con mouse x,y
@@ -30,3 +33,15 @@ cam_data[3] = 200; // margenes mas alla del room
 cam_data[2] = room_width / room_height; // relacion width / height
 cam_data[1] = room_height * 2; // max altura de ventana
 cam_data[0] = room_height * 0.5; // min altura de ventana
+
+// grupos manejo global
+grupote[m_gru_azul] = m_ctrl_player;
+grupote[m_gru_rojo] = m_ctrl_auto;
+grupote[m_gru_amarillo] = m_ctrl_auto;
+grupote[m_gru_verde] = m_ctrl_auto;
+
+// animaciones para el fuego
+for (var i = m_fuegos_ani - 1; i >= 0; i--) {
+	reloj_fuego[i] = i / m_fuegos_ani;
+	g_paso_fuego[i] = 0;
+}

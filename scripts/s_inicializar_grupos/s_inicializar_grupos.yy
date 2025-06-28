@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_inicializar_grupos",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_inicializar_grupos",
+  "parent":{
+    "name":"Creacion",
+    "path":"folders/Scripts/Creacion.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

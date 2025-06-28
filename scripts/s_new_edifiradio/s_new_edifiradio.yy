@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_new_edifiradio",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_new_edifiradio",
+  "parent":{
+    "name":"Creacion",
+    "path":"folders/Scripts/Creacion.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

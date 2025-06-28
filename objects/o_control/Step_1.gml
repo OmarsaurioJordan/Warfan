@@ -8,3 +8,12 @@ if random(1) < 0.01 {
 		window_set_size(display_get_width(), display_get_height());
 	}
 }
+
+// animacion fuegos
+for (var i = 0; i < m_fuegos_ani; i++) {
+	reloj_fuego[i] += dlts * 7;
+	if reloj_fuego[i] >= 1 {
+		reloj_fuego[i] -= 1;
+		g_paso_fuego[i] = irandom(7);
+	}
+}

@@ -1,5 +1,11 @@
 function s_new_recursos() {
 	
+	with o_planta {
+		instance_destroy();
+	}
+	with o_mineral {
+		instance_destroy();
+	}
 	with o_juego {
 		// vegetales
 		var tot = round(0.25 * tierras);

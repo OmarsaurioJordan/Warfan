@@ -1,15 +1,36 @@
 TAREAS:
 .
-- hacer un menú principal sencillo, por ahora solo con 3 botones de play.
+- hacer un menú principal sencillo.
 - dibujar y limitar juego segun reloj de la partida.
-- dibujar alertas en los bordes de la pantalla, función para usarla luego.
-- dibujar minimapa estratégico.
-- daño entre soldados, veleros, fuertes.
-- daño causado por explosiónes.
-- niebla de guerra, shader de iluminación de suelo circular.
-- posicionar grupos y camara al iniciar la partida.
-- manejo inteligente IA dopado y aleatorio.
 - condición de victoria y pantalla final, puntajes.
+- manejo inteligente IA dopado y aleatorio.
+- tutorial:construir señala soldado cercano.
+- tutorial: lanzar primer paracaidas.
+.
+- dibujar alertas en los bordes de la pantalla, notificaciones.
+- dibujar minimapa estratégico.
+- niebla de guerra, shader de iluminación de suelo circular.
+- mapan no explorado al inicio, no dibuja fondo.
+- efectos de sonido a todo.
+- música de fondo para menú y juego.
+- paleta de colores cool.
+.
+- paracaídas, globo y aletas se hacen transparentes al desaparecer.
+- limites de zoom camara en funcion de talla del mapa.
+- monigotes de fuerte se mueven y los parados también.
+- resaltado blanco a aspas molino fabrica.
+- shortcuts de teclado.
+- los veleros se repelen igual que los drones.
+- seleccionar tamaño interfaz GUI.
+- en metricas de unidades y edificios, guardar maximos para estadisticas finales.
+- drones están vibrando.
+- explosiónes apachurran plantas pero no minerales.
+- flechas viento dibujadas no escaladas.
+- muerto eliminarse si sobre edificio o si se construye encima.
+- evitar más de 3 stops de viento seguidos.
+- no construir cerca a edificios enemigos.
+.
+- header, icono, portada, fondo menu, gif portada.
 .
 HECHO:
 .
@@ -39,18 +60,7 @@ HECHO:
 - respawn de paracaidistas y bombas.
 - contador porcentaje silo_nuclear para poder lanzar.
 - antena: onda expansiva que elimina bombas, implosión.
-.
-ETC:
-.
-- paracaídas, globo y aletas se hacen transparentes al desaparecer.
-- limites de zoom camara en funcion de talla del mapa.
-- evitar stops del viento muy consecutivos.
-- monigotes de fuerte se mueven y los parados también.
-- resaltado blanco a aspas molino fabrica.
-- shortcuts de teclado.
-- los veleros se repelen igual que los drones.
-- seleccionar tamaño interfaz GUI.
-- en metricas de unidades y edificios guardar maximos.
-- efectos de sonido a todo.
-- música de fondo para menú y juego.
+- posicionar grupos y camara al iniciar la partida.
+- daño causado por explosiónes.
+- daño entre soldados, veleros, fuertes.
 .

@@ -21,6 +21,17 @@ if reloj_fin <= 0 {
 	else if reloj_paso == 3 {
 		o_juego.recurso[grupo, m_rec_explosiones]++;
 		// hacer damage a las cosas cercanas
-		// Tarea
+		var xx = x;
+		var yy = y;
+		with o_bloque {
+			if s_vec_distancia(x, y, xx, yy) < m_radio_explosion + 32 {
+				s_demoler(id);
+			}
+		}
+		with o_movil {
+			if s_vec_distancia(x, y, xx, yy) < m_radio_explosion + 64 {
+				s_morir(id);
+			}
+		}
 	}
 }

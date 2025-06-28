@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_new_edificio",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_new_edificio",
+  "parent":{
+    "name":"Ingame",
+    "path":"folders/Scripts/Ingame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

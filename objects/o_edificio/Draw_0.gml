@@ -9,6 +9,7 @@ switch nivel {
 		draw_sprite(d_edificios, 27, x, y);
 		draw_sprite_ext(d_edificios_color, 27, x, y,
 			1, 1, 0, g_color[grupo], 1);
+		s_draw_mifuego(id, 18);
 		break;
 	case 1:
 		if g_edifi_foco == id or g_seleccion == id {
@@ -22,6 +23,7 @@ switch nivel {
 		draw_sprite(d_edificios, 23, x, y);
 		draw_sprite_ext(d_edificios_color, 23, x, y,
 			1, 1, 0, g_color[grupo], 1);
+		s_draw_mifuego(id, 40);
 		break;
 	case 2:
 		if g_edifi_foco == id or g_seleccion == id {
@@ -37,5 +39,6 @@ switch nivel {
 		draw_sprite(d_edificios, 18, x, y);
 		draw_sprite_ext(d_edificios_color, 18, x, y,
 			1, 1, 0, g_color[grupo], 1);
+		s_draw_mifuego(id, 64);
 		break;
 }

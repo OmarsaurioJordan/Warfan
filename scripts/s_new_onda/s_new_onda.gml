@@ -5,7 +5,7 @@ function s_new_onda(origen) {
 		return false;
 	}
 	with origen {
-		if reloj_onda == 0 {
+		if reloj_recarga == 0 {
 			var aux;
 			var codigo_onda = random(1);
 			var desf = random(360);
@@ -16,7 +16,7 @@ function s_new_onda(origen) {
 				aux.direction = i * paso + desf;
 				aux.codigo_onda = codigo_onda;
 			}
-			reloj_onda = m_cadencia_ondas;
+			reloj_recarga = m_cadencia_ondas;
 			return true;
 		}
 	}

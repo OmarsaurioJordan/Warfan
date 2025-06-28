@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_get_vida",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_get_vida",
+  "parent":{
+    "name":"Generales",
+    "path":"folders/Scripts/Generales.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

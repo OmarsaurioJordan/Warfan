@@ -87,5 +87,6 @@ function s_new_mundo() {
 	// finalizar
 	ds_grid_destroy(rep);
 	ds_grid_destroy(esp);
-	return biomas;
+	ds_grid_destroy(o_juego.biomas);
+	o_juego.biomas = biomas;
 }

@@ -1,3 +1,17 @@
+// animacion
+if paso_disparo != -1 {
+	reloj_disparo -= dlt;
+	if reloj_disparo <= 0 {
+		reloj_disparo += 0.15;
+		paso_disparo++;
+		if paso_disparo >= 5 {
+			paso_disparo = -1;
+		}
+	}
+}
+
+// movimiento
+s_ataque(id, m_vision_suelo);
 if s_colision_suelo(id, 0.1) {
 	s_limites(id);
 	if s_is_agua(x, y) {

@@ -56,7 +56,7 @@ if g_seleccion == noone {
 	for (var i = 0; i < 7; i++) {
 		xx = (50 + i * 80) * e;
 		yy = room_height - 80 * e;
-		s_foc_boton(mou_x, mou_y, xx, yy, e,
+		s_draw_foc_boton(mou_x, mou_y, xx, yy, e,
 			string(costo[m_foc_silo_nuclear + i]),
 			m_foc_silo_nuclear, i, 24, true,
 			construir != noone and constru_foc == i);
@@ -72,9 +72,9 @@ else {
 	switch g_seleccion.object_index {
 		case o_cuartel: // paracaidistas
 			for (var i = 0; i < 3; i++) {
-				xx = (50 + i * 80) * e;
+				xx = (40 + i * 80) * e;
 				yy = room_height - 80 * e;
-				s_foc_boton(mou_x, mou_y, xx, yy, e,
+				s_draw_foc_boton(mou_x, mou_y, xx, yy, e,
 					string(costo[m_foc_paracaidas1 + i]),
 					m_foc_paracaidas1, i, 19, false, false);
 			}
@@ -87,9 +87,9 @@ else {
 			break;
 		case o_torre: // bombas
 			for (var i = 0; i < 3; i++) {
-				xx = (50 + i * 80) * e;
+				xx = (40 + i * 80) * e;
 				yy = room_height - 80 * e;
-				s_foc_boton(mou_x, mou_y, xx, yy, e,
+				s_draw_foc_boton(mou_x, mou_y, xx, yy, e,
 					string(costo[m_foc_bomb_normal + i]),
 					m_foc_bomb_normal, i, 15, false, false);
 			}
@@ -117,7 +117,7 @@ else {
 				draw_set_halign(fa_center);
 				xx += 150 * e;
 				yy = room_height - 80 * e;
-				s_foc_boton(mou_x, mou_y, xx, yy, e,
+				s_draw_foc_boton(mou_x, mou_y, xx, yy, e,
 					string(costo[m_foc_mejora]),
 					m_foc_mejora, 0, 13, false, false);
 				xx += 110 * e;
@@ -150,9 +150,9 @@ else {
 				e, e, 0, c_black, c_black, c_black, c_black, 1);
 			break;
 		case o_fuerte: // veleros
-			xx = 50 * e;
+			xx = 40 * e;
 			yy = room_height - 80 * e;
-			s_foc_boton(mou_x, mou_y, xx, yy, e,
+			s_draw_foc_boton(mou_x, mou_y, xx, yy, e,
 				string(costo[m_foc_velero]),
 				m_foc_velero, 0, 14, false, false);
 			xx += 110 * e;
@@ -166,22 +166,16 @@ else {
 			draw_set_halign(fa_right);
 			xx = 40 * e;
 			yy = room_height - 40 * e;
-			draw_sprite_ext(d_gui, 6, xx, yy,
-				e, e, 0, c_white, 0.666);
-			draw_sprite_ext(d_gui, 32, xx, yy,
-				e, e, 0, c_white, 1);
-			draw_text_transformed_color(xx + 85 * e, yy,
-				string(ceil(g_seleccion.reloj_onda)),
-				e, e, 0, c_black, c_black, c_black, c_black, 1);
+			s_draw_espera(xx, yy, e, string(ceil(g_seleccion.reloj_recarga)));
 			// botones
 			draw_set_halign(fa_center);
 			xx += 150 * e;
 			yy = room_height - 80 * e;
-			s_foc_boton(mou_x, mou_y, xx, yy, e,
+			s_draw_foc_boton(mou_x, mou_y, xx, yy, e,
 				string(costo[m_foc_dron]),
 				m_foc_dron, 0, 25, false, false);
 			xx += 80 * e;
-			s_foc_boton(mou_x, mou_y, xx, yy, e,
+			s_draw_foc_boton(mou_x, mou_y, xx, yy, e,
 				string(costo[m_foc_antibombas]),
 				m_foc_antibombas, 0, 12, false, false);
 			xx += 110 * e;
@@ -195,7 +189,7 @@ else {
 			if g_seleccion.reloj_nuclear == 0 {
 				xx = 50 * e;
 				yy = room_height - 80 * e;
-				s_foc_boton(mou_x, mou_y, xx, yy, e,
+				s_draw_foc_boton(mou_x, mou_y, xx, yy, e,
 					string(costo[m_foc_bomb_nuclear]),
 					m_foc_bomb_nuclear, 0, 24, false, false);
 				xx += 110 * e;
@@ -209,13 +203,7 @@ else {
 				draw_set_halign(fa_right);
 				xx = 40 * e;
 				yy = room_height - 40 * e;
-				draw_sprite_ext(d_gui, 6, xx, yy,
-					e, e, 0, c_white, 0.666);
-				draw_sprite_ext(d_gui, 32, xx, yy,
-					e, e, 0, c_white, 1);
-				draw_text_transformed_color(xx + 85 * e, yy,
-					string(ceil(g_seleccion.reloj_nuclear)),
-					e, e, 0, c_black, c_black, c_black, c_black, 1);
+				s_draw_espera(xx, yy, e, string(ceil(g_seleccion.reloj_nuclear)));
 			}
 			break;
 	}

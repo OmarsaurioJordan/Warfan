@@ -1,2 +1,4 @@
 s_invisi_recursos();
-instance_destroy(mi_dron);
+if mi_dron != noone {
+	instance_destroy(mi_dron);
+}

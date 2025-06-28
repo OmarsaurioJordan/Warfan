@@ -1,3 +1,3 @@
-if reloj_onda != 0 {
-	reloj_onda = max(0, reloj_onda - dlt);
+if reloj_recarga != 0 {
+	reloj_recarga = max(0, reloj_recarga - dlt);
 }

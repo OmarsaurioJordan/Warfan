@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_num_players",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_num_players",
+  "parent":{
+    "name":"Ingame",
+    "path":"folders/Scripts/Ingame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -11,7 +11,7 @@ if reloj_viento <= 0 {
 		histo_viento_vel[i - 1] = histo_viento_vel[i];
 	}
 	histo_viento_ang[m_viento_historial - 1] = irandom(35) * 10;
-	histo_viento_vel[m_viento_historial - 1] = irandom(3);
+	histo_viento_vel[m_viento_historial - 1] = choose(0, 1, 2, 2, 3);
 }
 var vv = histo_viento_vel[0] * m_viento_vel_max / 3;
 var vx = lengthdir_x(vv, histo_viento_ang[0]);
@@ -72,6 +72,24 @@ if random(1) < 0.005 {
 	}
 }
 
+// curacion de unidades
+/*
+reloj_regenera -= dlt;
+if reloj_regenera <= 0 {
+	reloj_regenera += m_reloj_regenera;
+	with o_movil {
+		vida = min(vida + 1, s_get_vida(object_index));
+	}
+	with o_bloque {
+		if object_index == o_edificio {
+			vida = min(vida + 1, s_get_vida(object_index) * lerp(0.5, 1, nivel / 2));
+		}
+		else {
+			vida = min(vida + 1, s_get_vida(object_index));
+		}
+	}
+}*/
+
 // cada tanto calcular porcentajes
 reloj_porcentajes -= dlts;
 if reloj_porcentajes <= 0 {
@@ -89,6 +107,7 @@ if reloj_porcentajes <= 0 {
 		}
 	}
 	else {
+		reloj_porcentajes *= 2;
 		for (var i = 0; i < 4; i++) {
 			recurso[i, m_rec_edificios] = 0;
 			recurso[i, m_rec_poblacion] = 0;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_crear_demo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_crear_demo",
+  "parent":{
+    "name":"Creacion",
+    "path":"folders/Scripts/Creacion.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

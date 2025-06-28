@@ -11,6 +11,9 @@ function s_new_velero(origen) {
 			rr = random(m_vision_torre);
 			xx = x + lengthdir_x(rr, dd);
 			yy = y + lengthdir_y(rr, dd);
+			if collision_circle(xx, yy, 24, o_velero, true, false) != noone {
+				continue;
+			}
 			if s_radio_mi_bioma(xx, yy, m_radio_velero, true) {
 				aux = instance_create_depth(xx, yy, -yy, o_velero);
 				aux.grupo = grupo;

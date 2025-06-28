@@ -10,3 +10,4 @@ draw_sprite_ext(d_edificios_color, 12, x, y,
 draw_sprite(d_edificios, 14, x, y);
 draw_sprite_ext(d_edificios_color, 14, x, y,
 	1, 1, 0, g_color[grupo], 1);
+s_draw_mifuego(id, 38);

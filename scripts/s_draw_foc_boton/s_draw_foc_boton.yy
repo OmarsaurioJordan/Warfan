@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_draw_foc_boton",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_draw_foc_boton",
+  "parent":{
+    "name":"Generales",
+    "path":"folders/Scripts/Generales.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

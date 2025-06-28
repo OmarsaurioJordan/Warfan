@@ -5,11 +5,12 @@
 #macro m_viento_reloj_max 12
 
 // entes
+#macro m_reloj_regenera 5
 #macro m_altu_vuelo 127
 #macro m_gravedad 64
-#macro m_vision_suelo 100
+#macro m_vision_suelo 150
 #macro m_vision_torre 200
-#macro m_vision_extractor 300
+#macro m_vision_extractor 250
 #macro m_vision_aire 300
 #macro m_vision_dron 400
 #macro m_paracaidas_reloj_vuelo 10
@@ -35,16 +36,22 @@
 #macro m_vel_onda 180
 #macro m_ondas_total 32
 #macro m_cadencia_ondas 30
+#macro m_radio_explosion 80
+#macro m_reloj_ataque 2.5
 
 // otras cosas, decorados
 #macro m_paso_fin_explosion 120
 #macro m_reloj_porcentajes 3
+#macro m_fuegos_ani 24
 
 // dibujado de colores y terrenos
 #macro m_gru_azul 0
 #macro m_gru_rojo 1
 #macro m_gru_amarillo 2
 #macro m_gru_verde 3
+#macro m_ctrl_vacio 0
+#macro m_ctrl_player 1
+#macro m_ctrl_auto 3
 #macro m_bio_agua 0
 #macro m_bio_arena 1
 #macro m_bio_tierra 2
@@ -56,6 +63,7 @@
 // estructura del mundo
 #macro m_wcelda 134
 #macro m_hcelda 84
+#macro m_players 4
 
 // enumeraciones
 #macro m_bomb_normal 0

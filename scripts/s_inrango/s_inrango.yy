@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_inrango",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_inrango",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
