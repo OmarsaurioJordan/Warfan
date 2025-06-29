@@ -9,3 +9,4 @@ vida = vida_max;
 fuego = irandom(m_fuegos_ani - 1);
 paso_disparo = -1;
 reloj_disparo = 0;
+reloj_activo = 0; // evita error

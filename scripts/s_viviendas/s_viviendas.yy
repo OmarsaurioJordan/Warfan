@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_viviendas",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_viviendas",
+  "parent":{
+    "name":"Ingame",
+    "path":"folders/Scripts/Ingame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,6 +1,6 @@
-function s_meet_circle_grupo(pos_x, pos_y, radio,
+function s_meet_unit(pos_x, pos_y, radio,
 		objeto, excepcion, mi_grupo) {
-	// retorna el objeto encontrado o noone
+	// retorna el objeto mas cercano encontrado o noone
 	
 	var aux = noone;
 	var aux_dd = radio;

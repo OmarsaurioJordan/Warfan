@@ -14,11 +14,18 @@ for (var i = 0; i < 3; i++) {
 	}
 }
 
+// hacer conteo de edificios cercanos
+if random(1) < 0.03 {
+	edi_cercanos = s_count_circle_grupo(x, y, m_vision_torre,
+		o_edificio, grupo, true);
+}
+
 // produccion
 reloj_produccion -= dlt;
 if reloj_produccion <= 0 {
 	reloj_produccion += m_reloj_produccion + random(0.2);
-	var lvl = lerp(0.3, 0.9, nivel / 2) * 0.5;
-	o_juego.recurso[grupo, m_rec_gente] = min(9999,
+	var lvl = lerp(0.3, 0.9, nivel / 2) * (edi_cercanos / 5);
+	o_juego.recurso[grupo, m_rec_gente] = min(
+		o_juego.recurso[grupo, m_rec_viviendas],
 		o_juego.recurso[grupo, m_rec_gente] + ext_gente * lvl);
 }

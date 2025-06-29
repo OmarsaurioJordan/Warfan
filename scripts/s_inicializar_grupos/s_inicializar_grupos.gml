@@ -134,13 +134,18 @@ function s_inicializar_grupos(iteraciones, plantas_near) {
 	ds_list_destroy(lisss);
 	instance_destroy(refer);
 	// crear las ciudades iniciales
+	var la_ia;
 	tot = 1;
 	for (var i = 0; i < array_length(o_control.grupote); i++) {
 		o_juego.recurso[i, m_rec_vivo] = 0;
 		if o_control.grupote[i] != m_ctrl_vacio {
 			o_juego.recurso[i, m_rec_vivo] = 1;
+			if o_control.grupote[i] == m_ctrl_auto {
+				la_ia = instance_create_depth(0, 0, 0, o_ia);
+				la_ia.grupo = i;
+			}
 			s_new_ciudad(puntos[mejor_grupo[tot], 0],
-				puntos[mejor_grupo[tot], 1], i, m_vision_torre);
+				puntos[mejor_grupo[tot], 1], i, m_radio_ciudad);
 			tot++;
 		}
 	}

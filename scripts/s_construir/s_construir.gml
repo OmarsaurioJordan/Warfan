@@ -27,4 +27,5 @@ function s_construir(pos_x, pos_y, el_grupo, foc_edificio, obrero) {
 	}
 	aux.grupo = el_grupo;
 	instance_destroy(obrero);
+	s_revisar_puntos_zona(aux.x, aux.y);
 }

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_modulo_bombardeo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_modulo_bombardeo",
+  "parent":{
+    "name":"IA",
+    "path":"folders/Scripts/IA.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -11,6 +11,7 @@ function s_set_mejora(origen) {
 			vida = vida_max;
 			o_juego.recurso[grupo, m_rec_madera] -=
 				o_juego.costo[m_foc_mejora];
+			s_viviendas();
 			return true;
 		}
 	}

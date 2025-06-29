@@ -16,7 +16,7 @@ function s_new_ciudad(pos_x, pos_y, el_grupo, radio_city) {
 	repeat 5 {
 		aux = s_new_edifiradio(pos_x, pos_y, radio_city, o_edificio, el_grupo);
 		if aux != noone {
-			aux.nivel = 2;
+			//aux.nivel = 2;
 		}
 	}
 }

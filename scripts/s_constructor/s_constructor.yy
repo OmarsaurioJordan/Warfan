@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_constructor",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_constructor",
+  "parent":{
+    "name":"IA",
+    "path":"folders/Scripts/IA.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -3,9 +3,33 @@ TAREAS:
 - hacer un menú principal sencillo.
 - dibujar y limitar juego segun reloj de la partida.
 - condición de victoria y pantalla final, puntajes.
-- manejo inteligente IA dopado y aleatorio.
-- tutorial:construir señala soldado cercano.
+- tutorial: construir señala soldado cercano.
 - tutorial: lanzar primer paracaidas.
+.
+- ia misión alcanzar un punto objetivo con soldados.
+- ia construir estructuras cerca al punto objetivo con soldados.
+- ia mejorar estructuras de un punto y protegerlo con antena y fuerte.
+- ia identificar la prioridad de recurso a buscar según producción.
+- ia exparcir soldados de manera equidistante.
+- ia exparcir barcos según tamaño del lago.
+- ia construir random lanzaderas de soldados y bombas y casas.
+- ia ubicar puntos hostiles, desde los cuales la pueden atacar.
+- ia vigilar antenas, para derribar bombarderos.
+- ia ubicar silo nuclear en punto estratégico.
+- ia priorizar ataque a silo nuclear enemigo.
+- ia proyectar cuándo lanzar bombas.
+- ia proyectar cuándo invadir masivamente con soldados.
+- ia identificar qué grupo es el más hostil, responder.
+- ia revisar puntos para ver si siguen existiendo.
+- tool ia predicción de vuelo a futuro según ente.
+- tool ia predicción daño hecho por explosión propia o ajena.
+.
+-------para modo ahorro al construir IA----------
+- intentar poner edificio edi_ok no tiene en cuenta el costo.
+- monigote asociado a construccion inmune a envejecer.
+- se saca dinero de la cuenta y se guarda a parte.
+- si algo falla se devuelve el dinero (madera).
+- (poder hacerlo con un edificio de cada tipo).
 .
 - dibujar alertas en los bordes de la pantalla, notificaciones.
 - dibujar minimapa estratégico.
@@ -29,6 +53,10 @@ TAREAS:
 - muerto eliminarse si sobre edificio o si se construye encima.
 - evitar más de 3 stops de viento seguidos.
 - no construir cerca a edificios enemigos.
+- gente como recurso no infinito, es población, no generación.
+- soldados más viejos kill cuando crea nuevo, renovar, craneo desaparece.
+- tener en cuenta x,y de lo planeado por lanzar para no paracaidas seguidos.
+- biomas suelo edificios afectan poblacion, no solo velocidad creacion.
 .
 - header, icono, portada, fondo menu, gif portada.
 .
@@ -63,4 +91,7 @@ HECHO:
 - posicionar grupos y camara al iniciar la partida.
 - daño causado por explosiónes.
 - daño entre soldados, veleros, fuertes.
+.
+- ia buscar puntos de recursos clave.
+- ia ubicar puntos enemigos como grandes ciudades.
 .

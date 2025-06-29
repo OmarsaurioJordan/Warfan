@@ -45,3 +45,26 @@ for (var i = m_fuegos_ani - 1; i >= 0; i--) {
 	reloj_fuego[i] = i / m_fuegos_ani;
 	g_paso_fuego[i] = 0;
 }
+
+// le da una importancia a los puntos de la IA
+peso_puntos = ds_list_create();
+ds_list_add(peso_puntos, m_ia_punto_infierno);
+ds_list_add(peso_puntos, m_ia_punto_metropolis);
+ds_list_add(peso_puntos, m_ia_punto_imperio);
+ds_list_add(peso_puntos, m_ia_punto_ciudad);
+ds_list_add(peso_puntos, m_ia_punto_alimento);
+ds_list_add(peso_puntos, m_ia_punto_extraccion);
+ds_list_add(peso_puntos, m_ia_punto_conflicto);
+ds_list_add(peso_puntos, m_ia_punto_riesgoso);
+ds_list_add(peso_puntos, m_ia_punto_pendiente);
+ds_list_add(peso_puntos, m_ia_punto_tenso);
+ds_list_add(peso_puntos, m_ia_punto_menor);
+ds_list_add(peso_puntos, m_ia_punto_pueblo);
+ds_list_add(peso_puntos, m_ia_punto_paraiso);
+ds_list_add(peso_puntos, m_ia_punto_recursos);
+ds_list_add(peso_puntos, m_ia_punto_mineral);
+ds_list_add(peso_puntos, m_ia_punto_madera);
+ds_list_add(peso_puntos, m_ia_punto_terreno);
+ds_list_add(peso_puntos, m_ia_punto_peligro);
+ds_list_add(peso_puntos, m_ia_punto_nuclear);
+ds_list_add(peso_puntos, m_ia_punto_altamar);

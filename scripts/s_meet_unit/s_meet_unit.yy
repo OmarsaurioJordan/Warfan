@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_meet_unit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_meet_unit",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -17,6 +17,7 @@ function s_ataque(quien, alcance) {
 			if otro != noone {
 				reloj_disparo = 0.15;
 				paso_disparo = 0;
+				reloj_activo = 4;
 				otro.vida--;
 				if otro.vida <= 0 {
 					if object_get_parent(otro.object_index) == o_movil {
@@ -25,6 +26,9 @@ function s_ataque(quien, alcance) {
 					else {
 						s_demoler(otro);
 					}
+				}
+				else if otro.object_index == o_soldado {
+					otro.reloj_activo = 4;
 				}
 			}
 		}

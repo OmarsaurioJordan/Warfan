@@ -4,6 +4,14 @@ function s_new_paracaidas(origen, foc_paracaidas) {
 			o_juego.costo[foc_paracaidas] {
 		return false;
 	}
+	if o_juego.recurso[origen.grupo, m_rec_soldados] >=
+			o_juego.recurso[origen.grupo, m_rec_viviendas] {
+		with o_soldado {
+			if grupo == origen.grupo and reloj_activo != 0 {
+				return false;
+			}
+		}
+	}
 	with origen {
 		var aux = instance_create_depth(x + random_range(-5, 5),
 			y + random_range(-5, 5), -y, o_paracaidas);

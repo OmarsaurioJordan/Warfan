@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"s_meet_circle_grupo",
+  "%Name":"s_objeto_azar",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"s_meet_circle_grupo",
+  "name":"s_objeto_azar",
   "parent":{
-    "name":"Fisica",
-    "path":"folders/Scripts/Fisica.yy",
+    "name":"IA",
+    "path":"folders/Scripts/IA.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

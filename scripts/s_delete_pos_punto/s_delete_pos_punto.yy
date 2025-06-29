@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_delete_pos_punto",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_delete_pos_punto",
+  "parent":{
+    "name":"IA",
+    "path":"folders/Scripts/IA.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

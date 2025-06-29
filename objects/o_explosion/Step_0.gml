@@ -33,5 +33,11 @@ if reloj_fin <= 0 {
 				s_morir(id);
 			}
 		}
+		with o_planta {
+			if s_vec_distancia(x, y, xx, yy) < m_radio_explosion {
+				o_juego.reloj_recalcula_plantas = 5;
+				instance_destroy();
+			}
+		}
 	}
 }

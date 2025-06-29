@@ -12,9 +12,9 @@ if reloj_anima <= 0 {
 // alejarse de otros drones
 if random(1) < 0.2 {
 	var lis = ds_priority_create();
-	if s_meet_circle_list(x, y, m_vision_dron,
-			o_dron, id, lis) != 0 {
-		var tot = ds_priority_size(lis);
+	var tot = s_meet_circle_list(x, y, m_vision_dron,
+		o_dron, id, lis);
+	if tot != 0 {
 		var vv = 200 * dlt / tot;
 		var dd, aux;
 		for (var i = 0; i < ceil(tot / 2); i++) {
@@ -31,7 +31,7 @@ if random(1) < 0.2 {
 			x += lengthdir_x(vv * 0.5, dd);
 			y += lengthdir_y(vv * 0.5, dd);
 		}
-		vv = 200 * dlt
+		vv = 100 * dlt
 		dd = random(360);
 		x += lengthdir_x(vv, dd);
 		y += lengthdir_y(vv, dd);

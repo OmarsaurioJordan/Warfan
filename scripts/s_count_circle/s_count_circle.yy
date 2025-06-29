@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_count_circle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_count_circle",
+  "parent":{
+    "name":"Fisica",
+    "path":"folders/Scripts/Fisica.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

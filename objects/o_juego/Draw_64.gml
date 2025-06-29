@@ -214,7 +214,7 @@ draw_set_halign(fa_right);
 draw_set_valign(fa_middle);
 var k = 0;
 for (var i = 0; i < 4; i++) {
-	if recurso[i, m_rec_vivo] == 1 { // Quitar es 0
+	if recurso[i, m_rec_vivo] == 0 {
 		continue;
 	}
 	xx = room_width - 40 * e;

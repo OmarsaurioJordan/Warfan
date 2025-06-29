@@ -73,7 +73,6 @@ if random(1) < 0.005 {
 }
 
 // curacion de unidades
-/*
 reloj_regenera -= dlt;
 if reloj_regenera <= 0 {
 	reloj_regenera += m_reloj_regenera;
@@ -88,7 +87,35 @@ if reloj_regenera <= 0 {
 			vida = min(vida + 1, s_get_vida(object_index));
 		}
 	}
-}*/
+}
+
+// envejecer soldados
+reloj_envejecer -= dlt;
+if reloj_envejecer <= 0 {
+	reloj_envejecer += 5;
+	var viejito, su_edad;
+	for (var i = 0; i < m_players; i++) {
+		while recurso[i, m_rec_soldados] > recurso[i, m_rec_viviendas] {
+			viejito = noone;
+			su_edad = 0;
+			with o_soldado {
+				if grupo == i and edad > su_edad {
+					su_edad = edad;
+					viejito = id;
+				}
+			}
+			s_envejecer(viejito);
+		}
+	}
+}
+
+// verificar si debe recalcular produccion de madera
+if reloj_recalcula_plantas != 0 {
+	reloj_recalcula_plantas = max(0, reloj_recalcula_plantas - dlt);
+	if reloj_recalcula_plantas == 0 {
+		s_extractores();
+	}
+}
 
 // cada tanto calcular porcentajes
 reloj_porcentajes -= dlts;
@@ -207,9 +234,4 @@ if mouse_check_button_pressed(mb_left) {
 if keyboard_check_pressed(vk_space) {
 	construir = noone;
 	g_seleccion = noone;
-}
-
-// Quitar trampas
-if mouse_check_button_pressed(mb_middle) {
-	instance_create_depth(mouse_x, mouse_y, -mouse_y, o_paracaidas);
 }

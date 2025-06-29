@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_is_terreno",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_is_terreno",
+  "parent":{
+    "name":"IA",
+    "path":"folders/Scripts/IA.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

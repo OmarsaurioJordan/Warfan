@@ -9,5 +9,14 @@ if subimg != 16 {
 		else if s_is_agua(x, y) {
 			instance_destroy();
 		}
+		else {
+			reloj_fin = 30;
+		}
+	}
+}
+else if viejo {
+	reloj_fin -= dlt;
+	if reloj_fin <= 0 {
+		instance_destroy();
 	}
 }

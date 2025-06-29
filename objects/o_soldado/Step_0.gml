@@ -1,4 +1,6 @@
 // animacion
+edad += dlt;
+reloj_activo = max(0, reloj_activo - dlt);
 if paso_disparo != -1 {
 	reloj_disparo -= dlt;
 	if reloj_disparo <= 0 {

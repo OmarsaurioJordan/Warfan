@@ -11,6 +11,7 @@ if reloj_vuelo == 0 {
 		else {
 			var aux = instance_create_depth(x, y, -y, o_soldado);
 			aux.grupo = grupo;
+			o_juego.recurso[grupo, m_rec_soldados]++;
 		}
 		instance_destroy();
 	}
