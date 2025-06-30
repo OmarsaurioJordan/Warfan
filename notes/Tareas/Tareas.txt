@@ -1,64 +1,40 @@
 TAREAS:
 .
-- hacer un menú principal sencillo.
+- hacer un menú principal más complejo.
 - dibujar y limitar juego segun reloj de la partida.
-- condición de victoria y pantalla final, puntajes.
-- tutorial: construir señala soldado cercano.
-- tutorial: lanzar primer paracaidas.
+- mejorar condición de victoria.
+- pantalla final, puntajes.
 .
 - ia misión alcanzar un punto objetivo con soldados.
-- ia construir estructuras cerca al punto objetivo con soldados.
-- ia mejorar estructuras de un punto y protegerlo con antena y fuerte.
-- ia identificar la prioridad de recurso a buscar según producción.
-- ia exparcir soldados de manera equidistante.
+- ia identificar la prioridad de recursos, administración del ahorro.
 - ia exparcir barcos según tamaño del lago.
-- ia construir random lanzaderas de soldados y bombas y casas.
-- ia ubicar puntos hostiles, desde los cuales la pueden atacar.
 - ia vigilar antenas, para derribar bombarderos.
 - ia ubicar silo nuclear en punto estratégico.
 - ia priorizar ataque a silo nuclear enemigo.
-- ia proyectar cuándo lanzar bombas.
 - ia proyectar cuándo invadir masivamente con soldados.
 - ia identificar qué grupo es el más hostil, responder.
-- ia revisar puntos para ver si siguen existiendo.
-- tool ia predicción de vuelo a futuro según ente.
-- tool ia predicción daño hecho por explosión propia o ajena.
-.
--------para modo ahorro al construir IA----------
-- intentar poner edificio edi_ok no tiene en cuenta el costo.
-- monigote asociado a construccion inmune a envejecer.
-- se saca dinero de la cuenta y se guarda a parte.
-- si algo falla se devuelve el dinero (madera).
-- (poder hacerlo con un edificio de cada tipo).
 .
 - dibujar alertas en los bordes de la pantalla, notificaciones.
 - dibujar minimapa estratégico.
 - niebla de guerra, shader de iluminación de suelo circular.
 - mapan no explorado al inicio, no dibuja fondo.
-- efectos de sonido a todo.
-- música de fondo para menú y juego.
 - paleta de colores cool.
 .
+- en viento 0 los soldados se mueven levemente a objetivos.
 - paracaídas, globo y aletas se hacen transparentes al desaparecer.
 - limites de zoom camara en funcion de talla del mapa.
-- monigotes de fuerte se mueven y los parados también.
+- monigotes de fuerte se animan y los parados también.
 - resaltado blanco a aspas molino fabrica.
 - shortcuts de teclado.
 - los veleros se repelen igual que los drones.
 - seleccionar tamaño interfaz GUI.
 - en metricas de unidades y edificios, guardar maximos para estadisticas finales.
 - drones están vibrando.
-- explosiónes apachurran plantas pero no minerales.
 - flechas viento dibujadas no escaladas.
 - muerto eliminarse si sobre edificio o si se construye encima.
 - evitar más de 3 stops de viento seguidos.
-- no construir cerca a edificios enemigos.
-- gente como recurso no infinito, es población, no generación.
-- soldados más viejos kill cuando crea nuevo, renovar, craneo desaparece.
-- tener en cuenta x,y de lo planeado por lanzar para no paracaidas seguidos.
 - biomas suelo edificios afectan poblacion, no solo velocidad creacion.
-.
-- header, icono, portada, fondo menu, gif portada.
+- bombas de la normal mas distanciadas, puntos distantes.
 .
 HECHO:
 .
@@ -91,7 +67,22 @@ HECHO:
 - posicionar grupos y camara al iniciar la partida.
 - daño causado por explosiónes.
 - daño entre soldados, veleros, fuertes.
+- efectos de sonido a todo.
+- música de fondo para menú y juego.
+- explosiónes apachurran plantas pero no minerales.
+- gente como recurso no infinito, es población, no generación.
+- soldados más viejos kill cuando crea nuevo, renovar, craneo desaparece.
 .
 - ia buscar puntos de recursos clave.
 - ia ubicar puntos enemigos como grandes ciudades.
+- tool ia predicción de vuelo a futuro según ente.
+- tool ia predicción daño hecho por explosión propia o ajena.
+- sistema de ahorro de recursos para inversión futura.
+- ia construir estructuras cerca al punto objetivo con soldados.
+- ia mejorar estructuras de un punto y protegerlo con antena y fuerte.
+- ia revisar puntos para ver si siguen existiendo.
+- ia proyectar cuándo lanzar bombas.
+- ia construir random lanzaderas de soldados y bombas y casas.
+- ia ubicar puntos hostiles, desde los cuales la pueden atacar.
+- ia exparcir soldados de manera equidistante.
 .

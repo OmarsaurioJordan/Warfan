@@ -14,3 +14,4 @@ for (var i = 0; i < 3; i++) {
 // verificar biomas para respawn poblacion
 ext_gente = s_populization(x, y);
 s_viviendas();
+s_audio(a_construir, x, y);

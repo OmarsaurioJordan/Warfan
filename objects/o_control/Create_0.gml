@@ -1,6 +1,11 @@
 randomize();
 draw_set_font(d_letras);
 instance_create_depth(0, 0, 0, o_base);
+if !m_mutar {
+	audio_channel_num(100);
+	audio_falloff_set_model(audio_falloff_inverse_distance_clamped);
+}
+//s_display_init(); // Quitar ensayo de html5
 
 globalvar dlt, dlts, g_viento_x, g_viento_y, g_color,
 	g_width_c, g_height_c, g_width, g_height, g_viento_vel,
@@ -10,14 +15,15 @@ dlts = 0; // delta de tiempo no pausable
 g_viento_x = 0; // direccion y fuerza del viento
 g_viento_y = 0;
 g_viento_vel = 0; // velocidad viento interpolada
-g_width_c = 64; // talla del mundo cotada en zonas
-g_height_c = 48;
+g_width_c = m_mundo_w; // talla del mundo cotada en zonas
+g_height_c = m_mundo_h;
 g_width = room_width; // talla general del mundo, recalculada en o_juego
 g_height = room_height;
 g_migrupo = m_gru_azul; // con que grupo juego
 g_edifi_foco = noone; // edificacion sombreada por mouse
 g_seleccion = noone; // que edificio ha seleccionado
 mas_vientos = 1; // multiplo para aparecer mas particulas
+volumen = 1; // sonidos generales
 
 // para dibujar en diferentes colores
 g_color[m_gru_azul] = make_color_rgb(124, 107, 219);
@@ -68,3 +74,16 @@ ds_list_add(peso_puntos, m_ia_punto_terreno);
 ds_list_add(peso_puntos, m_ia_punto_peligro);
 ds_list_add(peso_puntos, m_ia_punto_nuclear);
 ds_list_add(peso_puntos, m_ia_punto_altamar);
+
+// costos de ser bombardeados
+damage_min = 5; // >= minimo que le hara a enemigo
+damage_max = 12; // < maximo que le hara al aliado
+damage_objeto = ds_map_create();
+ds_map_add(damage_objeto, o_soldado, 1);
+ds_map_add(damage_objeto, o_antena, 10);
+ds_map_add(damage_objeto, o_fuerte, 16);
+ds_map_add(damage_objeto, o_fabrica, 25);
+ds_map_add(damage_objeto, o_edificio, 12);
+ds_map_add(damage_objeto, o_silo_nuclear, 100);
+ds_map_add(damage_objeto, o_cuartel, 5);
+ds_map_add(damage_objeto, o_torre, 8);

@@ -12,6 +12,13 @@ constru_foc = m_foc_nada; // de que foco viene el construir
 reloj_regenera = 0; // para curar unidades
 reloj_recalcula_plantas = 0; // cuando se destruyen, ver produccion
 reloj_envejecer = 0; // para eliminar soldados extra
+destroy_escombros = false; // true para destruirlos
+victoria = -1; // grupo que gano, -1 aun no se define, -2 empate
+
+// tutorial, nota se reestablece al final de este script
+tutorial = 0;
+tuto_camara = -1;
+tuto_zoom = -1;
 
 // costos de todas las cosas
 costo[m_foc_antena] = 30;
@@ -22,18 +29,18 @@ costo[m_foc_fuerte] = 40;
 costo[m_foc_silo_nuclear] = 100;
 costo[m_foc_edificio] = 17;
 costo[m_foc_paracaidas1] = 1;
-costo[m_foc_paracaidas2] = costo[m_foc_paracaidas1];
-costo[m_foc_paracaidas3] = costo[m_foc_paracaidas1];
+costo[m_foc_paracaidas2] = 2;
+costo[m_foc_paracaidas3] = 3;
 costo[m_foc_bomb_normal] = m_costo_explosivo * m_bomba_normal_total;
 costo[m_foc_bomb_dispersion] = m_costo_explosivo * m_bomba_dispersion_total;
 costo[m_foc_bomb_linea] = m_costo_explosivo * m_bomba_linea_total;
 var tot = ceil(power(m_bomba_radio_nuclear, 2) /
 	power(m_radio_bombita_nuclear, 2));
-costo[m_foc_bomb_nuclear] = ceil(m_costo_explosivo * tot * 0.25);
-costo[m_foc_velero] = 3;
+costo[m_foc_bomb_nuclear] = ceil(m_costo_explosivo * tot * 0.333);
+costo[m_foc_velero] = 5;
 costo[m_foc_mejora] = ceil(costo[m_foc_edificio] / 2);
 costo[m_foc_dron] = 0; // gratis
-costo[m_foc_antibombas] = m_costo_explosivo * m_bomba_normal_total;
+costo[m_foc_antibombas] = round(m_costo_explosivo * m_bomba_normal_total / 3);
 
 // estructura de datos para el viento
 reloj_viento = m_viento_reloj_max;
@@ -68,9 +75,9 @@ lis_quemones_y = ds_list_create();
 tierras = 0; // total de zonas que son terrestres, de g_width_c * g_height_c
 biomas = ds_grid_create(g_width_c, g_height_c); // grid con todos los datos de terrenos
 do {
-	s_new_mundo();
-	s_new_biomas();
-	s_new_recursos();
+	s_new_mundo(id);
+	s_new_biomas(id);
+	s_new_recursos(id);
 }
 until (s_inicializar_grupos(ceil(g_width_c * g_height_c *
 	(100 / 3072) * s_num_players(true)), 10));
@@ -83,3 +90,14 @@ for (var i = 0; i < m_players; i++) {
 	recurso[i, m_rec_madera] = costo[m_foc_fabrica] * 3;
 	recurso[i, m_rec_mineral] = 0;
 }
+
+// poner los sonidos de fondo
+if !m_mutar {
+	audio_play_sound(a_viento, 100, true);
+	audio_stop_sound(a_music_menu);
+}
+
+// tutorial
+tutorial = 0; // 0:camara, 1:paracaidas 2:construir
+tuto_camara = camera_get_view_x(view_camera[0]);
+tuto_zoom = camera_get_view_width(view_camera[0]);

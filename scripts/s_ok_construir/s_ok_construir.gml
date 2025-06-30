@@ -1,8 +1,8 @@
-function s_ok_construir(pos_x, pos_y, el_grupo, foc_edificio) {
+function s_ok_construir(pos_x, pos_y, el_grupo, foc_edificio, ver_valor) {
 	// retorna el id de obrero valido o noone
 	
 	var obrero = noone;
-	if o_juego.costo[foc_edificio] <=
+	if !ver_valor or o_juego.costo[foc_edificio] <=
 			o_juego.recurso[el_grupo, m_rec_madera] {
 		with o_base {
 			if point_in_rectangle(pos_x, pos_y, 36, 36, g_width - 36, g_height - 36) {

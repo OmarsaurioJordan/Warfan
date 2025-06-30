@@ -18,6 +18,7 @@ function s_ataque(quien, alcance) {
 				reloj_disparo = 0.15;
 				paso_disparo = 0;
 				reloj_activo = 4;
+				s_audio(a_disparo, x, y)
 				otro.vida--;
 				if otro.vida <= 0 {
 					if object_get_parent(otro.object_index) == o_movil {

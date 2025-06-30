@@ -12,6 +12,9 @@ if reloj_vuelo == 0 {
 			var aux = instance_create_depth(x, y, -y, o_soldado);
 			aux.grupo = grupo;
 			o_juego.recurso[grupo, m_rec_soldados]++;
+			if viejito {
+				s_envejecer(aux);
+			}
 		}
 		instance_destroy();
 	}

@@ -1,4 +1,4 @@
-function s_new_recursos() {
+function s_new_recursos(obj_creador) {
 	
 	with o_planta {
 		instance_destroy();
@@ -6,7 +6,7 @@ function s_new_recursos() {
 	with o_mineral {
 		instance_destroy();
 	}
-	with o_juego {
+	with obj_creador {
 		// vegetales
 		var tot = round(0.25 * tierras);
 		var prob = 0.1;

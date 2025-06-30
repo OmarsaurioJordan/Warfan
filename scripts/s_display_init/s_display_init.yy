@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_display_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_display_init",
+  "parent":{
+    "name":"Generales",
+    "path":"folders/Scripts/Generales.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

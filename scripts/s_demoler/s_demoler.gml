@@ -32,6 +32,7 @@ function s_demoler(origen) {
 		if g_seleccion == id {
 			g_seleccion = noone;
 		}
+		s_audio(a_demoler, x, y);
 		instance_destroy();
 	}
 }

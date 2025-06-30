@@ -1,7 +1,7 @@
-function s_nearest_punto(la_ia, pos_x, pos_y) {
+function s_nearest_punto(la_ia, pos_x, pos_y, radio) {
 	
 	var pnt = -1;
-	var pnt_dist = 1000000;
+	var pnt_dist = radio;
 	var dd;
 	with la_ia {
 		for (var i = 0; i < ds_list_size(punto_ia_x); i++) {

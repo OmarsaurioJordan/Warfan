@@ -10,7 +10,8 @@ altura = max(0, altura - m_gravedad * dlt);
 if altura == 0 {
 	switch bomba {
 		case m_bomb_normal:
-			s_bombazo(x, y, m_bomba_normal_total, m_bomba_radio_normal, grupo);
+			s_bombazo(x, y, m_bomba_normal_total,
+				m_bomba_radio_normal, grupo, true);
 			break;
 		case m_bomb_linea:
 		case m_bomb_dispersion:
@@ -18,9 +19,11 @@ if altura == 0 {
 			aux.grupo = grupo;
 			break;
 		case m_bomb_nuclear:
+			s_audio(a_nuclear, x, y);
 			var tot = ceil(power(m_bomba_radio_nuclear, 2) /
 				power(m_radio_bombita_nuclear, 2));
-			s_bombazo(x, y, tot, m_bomba_radio_nuclear, grupo);
+			s_bombazo(x, y, tot, m_bomba_radio_nuclear,
+				grupo, false);
 			break;
 	}
 	instance_destroy();

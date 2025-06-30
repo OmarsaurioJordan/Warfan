@@ -18,6 +18,7 @@ if reloj_ataque <= 0 {
 	if otro != noone {
 		reloj_disparo = 0.15;
 		paso_disparo = 0;
+		s_audio(a_disparo, x, y);
 		otro.vida--;
 		if otro.vida <= 0 {
 			s_morir(otro);

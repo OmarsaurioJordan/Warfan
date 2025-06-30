@@ -263,3 +263,126 @@ if mouse_foco == m_foc_nada and construir == noone {
 		mouse_foco = m_foc_edi_foco;
 	}
 }
+
+// mensaje de victoria o derrota
+var txttt = "";
+if victoria != -1 {
+	if victoria == -2 {
+		txttt = "EMPATE!!!";
+	}
+	else if victoria == g_migrupo {
+		txttt = "VICTORIA!!!";
+	}
+	else {
+		txttt = "DERROTA!!!";
+	}
+}
+else if recurso[g_migrupo, m_rec_vivo] == 0 {
+	txttt = "DERROTA!!!";
+}
+if txttt != "" {
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text_transformed_color(room_width / 2, room_height * 0.5,
+		txttt, 1.5, 1.5, 0, c_white, c_white, c_white, c_white, 1);
+	draw_text_transformed_color(room_width / 2, room_height * 0.75,
+		"pulsa Escape para volver al menú",
+		1, 1, 0, c_white, c_white, c_white, c_white, 1);
+}
+
+// mensajes tutorial
+if tutorial < 4 {
+	var txt = "";
+	switch tutorial {
+		case 0: // camara
+			txt = "Mueve la cámara con clic derecho\nHaz zoom con la rueda del mouse";
+			break;
+		case 1: // evocacion
+			if g_seleccion == noone {
+				txt = "Selecciona la torre con\nel techo en forma de paracaídas";
+			}
+			else if g_seleccion.object_index != o_cuartel {
+				txt = "Ese no es el edificio\nPuedes pulsar Espacio para deseleccionar";
+			}
+			else {
+				txt = "Pulsa en alguno de los paracaídistas\nTe costará población";
+			}
+			break;
+		case 2: // construccion
+			if g_seleccion == noone {
+				if construir == noone {
+					txt = "Selecciona un edificio\nde la lista inferior, costará madera";
+				}
+				else {
+					txt = "Ponlo con clic Izquierdo cerca a\nun paracaídista ¿Hay madera suficiente?";
+				}
+			}
+			else {
+				txt = "Deselecciona todo pulsando Espacio\nO dando clic en el suelo";
+			}
+			break;
+		case 3: // informacion
+			txt = "Selecciona cosas para ver su información (Enter ocultar)\n";
+			if g_seleccion == noone {
+				switch construir {
+					case o_antena:
+						txt += "Antena: con dron espía y onda PEM anti bombarderos";
+						break;
+					case o_cuartel:
+						txt += "Cuartel: crea soldados paracaídistas usando población";
+						break;
+					case o_edificio:
+						txt += "Edificio: genera población e impone su límite máximo";
+						break;
+					case o_fabrica:
+						txt += "Extractor: obtiene madera y minerales que hay en su cercanía";
+						break;
+					case o_fuerte:
+						txt += "Fuerte: crea barcos en la costa y dispara a los enemigos";
+						break;
+					case o_silo_nuclear:
+						txt += "Reactor: tarda un tiempo en armar una costosa bomba nuclear";
+						break;
+					case o_torre:
+						txt += "Torre: crea bombardeos a cambio de mineral";
+						break;
+					default:
+						txt += "Destruye las edificaciónes enemigas para vencer!!!";
+						break;
+				}
+			}
+			else {
+				switch g_seleccion.object_index {
+					case o_antena:
+						txt += "Antena: la onda PEM solo derriba a un bombardero a la vez";
+						break;
+					case o_cuartel:
+						txt += "Cuartel: entre más grande el paracaídas más lejos llegará";
+						break;
+					case o_edificio:
+						txt += "Edificio: mejor entre más juntos estén, lejos de la nieve y la arena";
+						break;
+					case o_fabrica:
+						txt += "Extractor: si hay varios cerca compiten por los recursos";
+						break;
+					case o_fuerte:
+						txt += "Fuerte: muy resistente, sus barcos se mueven libres con el viento";
+						break;
+					case o_silo_nuclear:
+						txt += "Reactor: una vez la bomba nuclear vuela nada la puede detener";
+						break;
+					case o_torre:
+						txt += "Torre: crea bombarderos de área: puntual, en aro, lineal";
+						break;
+				}
+			}
+			break;
+	}
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text_transformed_color(room_width / 2, room_height * 0.2,
+		txt, 1, 1, 0, c_white, c_white, c_white, c_white, 1);
+}
+
+// mouse
+draw_sprite(d_mouse, 0, mou_x, mou_y);

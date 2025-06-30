@@ -1,4 +1,4 @@
-function s_new_mundo() {
+function s_new_mundo(obj_creador) {
 	
 	// elegir parametros al azar
 	var semillas = irandom_range(3, 6);
@@ -62,15 +62,15 @@ function s_new_mundo() {
 		}
 		// verificar que halla suficiente tierra
 		if !ok {
-			o_juego.tierras = 0;
+			obj_creador.tierras = 0;
 			for (var w = 0; w < g_width_c; w++) {
 				for (var h = 0; h < g_height_c; h++) {
 					if ds_grid_get(biomas, w, h) != m_bio_agua {
-						o_juego.tierras++;
+						obj_creador.tierras++;
 					}
 				}
 			}
-			if o_juego.tierras / (g_width_c * g_height_c) < 0.333 {
+			if obj_creador.tierras / (g_width_c * g_height_c) < 0.333 {
 				// hacer otro ciclo de semillas aleatorias
 				ok = true;
 				xx = irandom(g_width_c - 1);
@@ -87,6 +87,6 @@ function s_new_mundo() {
 	// finalizar
 	ds_grid_destroy(rep);
 	ds_grid_destroy(esp);
-	ds_grid_destroy(o_juego.biomas);
-	o_juego.biomas = biomas;
+	ds_grid_destroy(obj_creador.biomas);
+	obj_creador.biomas = biomas;
 }

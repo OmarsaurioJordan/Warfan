@@ -7,3 +7,4 @@ paso_disparo = -1;
 reloj_disparo = 0;
 reloj_ataque = m_reloj_ataque;
 reloj_activo = 0; // evita error
+s_audio(a_construir, x, y);

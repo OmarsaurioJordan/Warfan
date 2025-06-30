@@ -27,7 +27,7 @@
 #macro m_bomba_normal_total 6
 #macro m_bomba_radio_normal 200
 #macro m_bomba_radio_nuclear 666
-#macro m_reloj_nuclear 180
+#macro m_reloj_nuclear 120
 #macro m_radio_bombita_nuclear 55
 #macro m_vel_dron 0.75
 #macro m_vel_velero 0.5
@@ -69,10 +69,13 @@
 #macro m_bio_rojo 6
 
 // estructura del mundo
+#macro m_mundo_w 64
+#macro m_mundo_h 48
 #macro m_wcelda 134
 #macro m_hcelda 84
 #macro m_players 4
 #macro m_radio_ciudad 220
+#macro m_mutar false
 
 // enumeraciones
 #macro m_bomb_normal 0
@@ -114,6 +117,7 @@
 // cosas de la IA
 // si agrega algo nuevo, ponerlo en o_control ini
 #macro m_ia_prob_accion 0.03 // para comportamiento estocastico
+#macro m_ia_retardo_rafaga_cosas 4 // seg para no paracaidas y bombas seguidos
 #macro m_ia_cluster_construir 5 // cuantos edificios para elegir
 #macro m_ia_punto_madera 0 // pendiente por dominar
 #macro m_ia_punto_mineral 1 // pendiente por dominar

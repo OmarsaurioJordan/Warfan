@@ -12,6 +12,7 @@ function s_set_mejora(origen) {
 			o_juego.recurso[grupo, m_rec_madera] -=
 				o_juego.costo[m_foc_mejora];
 			s_viviendas();
+			s_audio(a_construir, x, y); // Tarea otro sonido
 			return true;
 		}
 	}

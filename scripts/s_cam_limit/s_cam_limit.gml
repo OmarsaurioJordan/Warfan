@@ -1,6 +1,4 @@
 function s_cam_limit() {
-	
-	// s_cam_limit();
 	// esta funcion debe ser llamada siempre que movemos camara
 
 	with o_control {
@@ -13,5 +11,10 @@ function s_cam_limit() {
 				(g_width - wview) + cam_data[3]),
 			clamp(round(yview), -cam_data[3],
 				(g_height - hview) + cam_data[3]));
+		// posicionar el microfono
+		xview = camera_get_view_x(view_camera[0]);
+		yview = camera_get_view_y(view_camera[0]);
+		audio_listener_position(xview + wview / 2,
+			yview + hview / 2 + m_altu_vuelo / 2, hview / 2);
 	}
 }

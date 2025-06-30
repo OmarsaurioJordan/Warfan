@@ -10,8 +10,8 @@
   "name":"o_bomba",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entes",
-    "path":"folders/Objetos/Entes.yy",
+    "name":"Efectos",
+    "path":"folders/Objetos/Efectos.yy",
   },
   "parentObjectId":{
     "name":"o_grupo",

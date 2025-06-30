@@ -17,3 +17,26 @@ for (var i = 0; i < m_fuegos_ani; i++) {
 		g_paso_fuego[i] = irandom(7);
 	}
 }
+
+// comandos de teclado generales
+if keyboard_check_pressed(vk_anykey) {
+	switch keyboard_key {
+		
+		case vk_escape:
+			// abandonar partida
+			break;
+		
+		case vk_f4:
+			window_set_fullscreen(!window_get_fullscreen());
+			break;
+		
+		case vk_add:
+			volumen = min(1, volumen + 0.1);
+			audio_master_gain(volumen);
+			break;
+		case vk_subtract:
+			volumen = max(0, volumen - 0.1);
+			audio_master_gain(volumen);
+			break;
+	}
+}

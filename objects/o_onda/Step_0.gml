@@ -9,7 +9,6 @@ if reloj_paso == -1 {
 		x += lengthdir_x(m_vel_onda * dlt, direction);
 		y += lengthdir_y(m_vel_onda * dlt, direction);
 		s_limites(id);
-	
 		// verificar si puede desactivar bombarderos
 		if codigo_onda != -1 {
 			var otr = instance_place(x, y, o_bombardero);
@@ -23,7 +22,9 @@ if reloj_paso == -1 {
 						reloj_fin = random_range(0.1, 0.15);
 						x = otr.x;
 						y = otr.y;
+						depth = otr.depth;
 						var ccc = codigo_onda;
+						s_audio(a_explosion, x, y); // Tarea sonido implosion
 						with o_onda {
 							if codigo_onda == ccc {
 								codigo_onda = -1;

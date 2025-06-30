@@ -1,8 +1,11 @@
-function s_bombazo(pos_x, pos_y, numero, radio, grupo) {
+function s_bombazo(pos_x, pos_y, numero, radio, grupo, suenan) {
 	
 	var xx, yy, dd, aux;
 	aux = instance_create_depth(pos_x, pos_y, -pos_y, o_explosion);
-	aux.grupo = grupo
+	aux.grupo = grupo;
+	if !suenan {
+		aux.sonar = false;
+	}
 	repeat numero - 1 {
 		do {
 			xx = pos_x + random_range(-radio, radio);
@@ -13,5 +16,8 @@ function s_bombazo(pos_x, pos_y, numero, radio, grupo) {
 		aux = instance_create_depth(xx, yy, -yy, o_explosion);
 		aux.reloj_fin = random_range(dd / 2, dd) / 100;
 		aux.grupo = grupo;
+		if !suenan {
+			aux.sonar = false;
+		}
 	}
 }

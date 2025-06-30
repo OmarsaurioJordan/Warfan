@@ -46,5 +46,16 @@ function s_cam_zoom(char_down, char_up, extra_prop) {
 	    }
 	    camera_set_view_pos(view_camera[0], mx - cx * ww, my - cy * hh);
 	    s_cam_limit();
+		// cosas del tutorial
+		with o_juego {
+			if tutorial == 0 {
+				if tuto_zoom != -1 and abs(tuto_zoom - wview) > 400 {
+					tuto_zoom = -1;
+				}
+				if tuto_camara == -1 and tuto_zoom == -1 {
+					tutorial++;
+				}
+			}
+		}
 	}
 }

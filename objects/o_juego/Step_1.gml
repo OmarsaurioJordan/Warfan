@@ -70,6 +70,27 @@ if random(1) < 0.005 {
 			break;
 		}
 	}
+	// revisar si suena la mudica de fondo
+	if !m_mutar {
+		if !audio_is_playing(a_music_juego1) and !audio_is_playing(a_music_juego2) {
+			audio_play_sound(choose(a_music_juego1, a_music_juego2), 100, false);
+		}
+	}
+}
+
+// destruir escombros
+if destroy_escombros {
+	destroy_escombros = false;
+	with o_escombro {
+		if place_meeting(x, y, o_bloque) {
+			instance_destroy();
+		}
+	}
+	// apachurrar naturales
+	with o_natural {
+		visible = !place_meeting(x, y, o_bloque) and
+			!place_meeting(x, y, o_escombro);
+	}
 }
 
 // curacion de unidades
@@ -107,6 +128,11 @@ if reloj_envejecer <= 0 {
 			s_envejecer(viejito);
 		}
 	}
+}
+
+// ver condicion de victoria
+if random(1) < 0.05 {
+	s_victoria();
 }
 
 // verificar si debe recalcular produccion de madera
@@ -162,6 +188,27 @@ if reloj_porcentajes <= 0 {
 	}
 }
 
+// comandos de teclado
+if keyboard_check_pressed(vk_anykey) {
+	switch keyboard_key {
+		
+		case vk_escape:
+			if victoria != -1 or recurso[g_migrupo, m_rec_vivo] == 0 {
+				room_goto(w_menu);
+			}
+			break;
+		
+		case vk_enter:
+			if tutorial == 3 {
+				tutorial++;
+			}
+			else if tutorial == 4 {
+				tutorial--;
+			}
+			break;
+	}
+}
+
 // comandos con mouse clic
 if mouse_check_button_pressed(mb_left) {
 	switch mouse_foco {
@@ -203,7 +250,11 @@ if mouse_check_button_pressed(mb_left) {
 		case m_foc_paracaidas1:
 		case m_foc_paracaidas2:
 		case m_foc_paracaidas3:
-			s_new_paracaidas(g_seleccion, mouse_foco);
+			if s_new_paracaidas(g_seleccion, mouse_foco) {
+				if tutorial == 1 {
+					tutorial++;
+				}
+			}
 			break;
 		
 		case m_foc_bomb_normal:
@@ -235,3 +286,10 @@ if keyboard_check_pressed(vk_space) {
 	construir = noone;
 	g_seleccion = noone;
 }
+
+// Quitar trampa
+/*
+if mouse_check_button_pressed(mb_middle) {
+	instance_create_depth(mouse_x, mouse_y, -mouse_y, o_nuclear);
+}
+*/

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"s_is_foc_madera",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"s_is_foc_madera",
+  "parent":{
+    "name":"Ingame",
+    "path":"folders/Scripts/Ingame.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

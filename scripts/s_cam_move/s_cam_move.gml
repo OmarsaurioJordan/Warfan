@@ -9,6 +9,17 @@ function s_cam_move(key_mouse) {
 		        xview + cam_data[4] - mouse_x,
 		        yview + cam_data[5] - mouse_y);
 	        s_cam_limit();
+			// cosas del tutorial
+			with o_juego {
+				if tutorial == 0 {
+					if tuto_camara != -1 and abs(tuto_camara - xview) > 400 {
+						tuto_camara = -1;
+					}
+					if tuto_camara == -1 and tuto_zoom == -1 {
+						tutorial++;
+					}
+				}
+			}
 	    }
 	    if mouse_check_button_pressed(key_mouse) {
 	        cam_data[4] = mouse_x;

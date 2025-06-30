@@ -1,3 +1,4 @@
+/*
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 var c = g_color[grupo];
@@ -38,3 +39,4 @@ for (var i = 0; i < ds_list_size(punto_ia_x); i++) {
 		ds_list_find_value(punto_ia_y, i),
 		txt, 1.5, 1.5, 0, c_black, c_black, c_black, c_black, 1);
 }
+*/

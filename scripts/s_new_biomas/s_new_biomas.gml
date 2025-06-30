@@ -1,6 +1,6 @@
-function s_new_biomas() {
+function s_new_biomas(obj_creador) {
 	
-	with o_juego {
+	with obj_creador {
 		// poner semillas de temperatura
 		var prob = 0.1;
 		var tot = irandom(ceil(0.01 * tierras));

@@ -1,6 +1,6 @@
 function s_count_circle_grupo(pos_x, pos_y, radio,
 		objeto, el_grupo, is_elgrupo) {
-	// retorna numero de objetos agregados a la lista
+	// retorna numero de objetos
 	// is_elgrupo true tienen que ser de ese grupo, false diferentes a
 	
 	var dd;

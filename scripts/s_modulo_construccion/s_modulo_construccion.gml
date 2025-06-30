@@ -2,9 +2,9 @@ function s_modulo_construccion(la_ia) {
 	
 	with la_ia {
 		// que tipo de edificio desea hacer
-		var cual = choose(m_foc_antena, m_foc_cuartel,
-			m_foc_edi_foco, m_foc_fabrica,
-			m_foc_fuerte, m_foc_silo_nuclear, m_foc_torre);
+		var cual = choose(m_foc_cuartel,
+			m_foc_edificio, m_foc_fabrica,
+			m_foc_fuerte, m_foc_torre); // Tarea faltan edificaciones
 		var tot = 0;
 		with o_fabrica {
 			if grupo == la_ia.grupo {
@@ -13,6 +13,15 @@ function s_modulo_construccion(la_ia) {
 		}
 		if tot < 3 {
 			cual = m_foc_fabrica;
+			// volcar todo el dinero a la fabrica
+			for (var i = 0; i < array_length(admin); i++) {
+				if admin[i][0] != m_foc_fabrica {
+					if s_is_foc_madera(admin[i][0]) {
+						ahorro[m_foc_fabrica] += ahorro[admin[i][0]];
+						ahorro[admin[i][0]] = 0;
+					}
+				}
+			}
 		}
 		// averiguar si hay la cantidad suficiente de candidatos
 		tot = 0;
@@ -26,14 +35,16 @@ function s_modulo_construccion(la_ia) {
 		}
 		// elegir al candidato mejor
 		var mejor = -1;
-		var mejor_valor = 0;
+		var mejor_valor = -1;
 		var mv;
 		for (var i = 0; i < ds_list_size(posible_accion); i++) {
 			if ds_list_find_value(posible_accion, i) == cual {
-				mv = ds_list_find_value(posible_criterio, i);
-				if mv > mejor_valor {
-					mejor_valor = mv;
-					mejor = i;
+				if instance_exists(ds_list_find_value(posible_edificio, i)) {
+					mv = ds_list_find_value(posible_criterio, i);
+					if mv > mejor_valor {
+						mejor_valor = mv;
+						mejor = i;
+					}
 				}
 			}
 		}

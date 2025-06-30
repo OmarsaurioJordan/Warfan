@@ -11,6 +11,10 @@ reloj_fin -= dlt;
 if reloj_fin <= 0 {
 	reloj_fin = random_range(0.1, 0.15);
 	reloj_paso++;
+	if sonar {
+		sonar = false;
+		s_audio(a_explosion, x, y);
+	}
 	if reloj_paso >= m_paso_fin_explosion * 2 {
 		if !is_agua {
 			ds_list_add(o_juego.lis_quemones_x, x);
@@ -29,11 +33,15 @@ if reloj_fin <= 0 {
 			}
 		}
 		with o_movil {
-			if s_vec_distancia(x, y, xx, yy) < m_radio_explosion + 64 {
+			if s_vec_distancia(x, y, xx, yy) < m_radio_explosion +
+					random_range(24, 64) {
 				s_morir(id);
 			}
 		}
 		with o_planta {
+			if random(1) < 0.5 {
+				continue;
+			}
 			if s_vec_distancia(x, y, xx, yy) < m_radio_explosion {
 				o_juego.reloj_recalcula_plantas = 5;
 				instance_destroy();

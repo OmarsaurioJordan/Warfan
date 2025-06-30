@@ -10,8 +10,8 @@
   "name":"o_escombro",
   "overriddenProperties":[],
   "parent":{
-    "name":"Edificios",
-    "path":"folders/Objetos/Edificios.yy",
+    "name":"Efectos",
+    "path":"folders/Objetos/Efectos.yy",
   },
   "parentObjectId":{
     "name":"o_grupo",

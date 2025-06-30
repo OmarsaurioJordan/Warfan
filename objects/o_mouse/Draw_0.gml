@@ -63,3 +63,10 @@ if o_juego.construir != noone {
 			1, 1, 0, c_dkgray, 0.75);
 	}
 }
+
+// dibujar cosas de ensayo
+/*
+draw_circle_color(x, y, d1 - m_radio_explosion, c_black, c_black, true);
+draw_circle_color(x, y, d2 + m_radio_explosion, c_black, c_black, true);
+draw_circle_color(x, y, , c_red, c_red, true);
+*/

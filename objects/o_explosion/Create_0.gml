@@ -5,3 +5,4 @@ reloj_humo = 0;
 reloj_paso_humo = 0;
 s_limites(id);
 is_agua = s_is_agua(x, y);
+sonar = true; // sonido explotar
